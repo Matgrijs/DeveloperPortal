@@ -1,0 +1,26 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeveloperPortal.JiraIssues">
+
+    <StackLayout Padding="10">
+        <Button Text="Back" 
+                HorizontalOptions="Start" 
+                WidthRequest="100" 
+                Clicked="OnBackButtonClicked"
+                Grid.Row="0" 
+                VerticalOptions="Center"
+                BackgroundColor="#c6002a"
+                Margin="10,0" />
+        <Label Text="Jira Issues - Bugs" FontSize="Large" HorizontalOptions="Center"/>
+        <CollectionView x:Name="IssuesCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10" BackgroundColor="LightGray" Margin="5">
+                        <Label Text="{Binding Key}" FontAttributes="Bold"/>
+                        <Label Text="{Binding Fields.Summary}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

@@ -1,11 +1,20 @@
-﻿namespace DeveloperPortal;
+﻿using Auth0.OidcClient;
 
-public partial class App : Application
+namespace DeveloperPortal;
+
+public partial class App
 {
-    public App()
+    public static IServiceProvider? Services { get; set; }
+
+    public App(IServiceProvider? serviceProvider)
     {
         InitializeComponent();
 
-        MainPage = new AppShell();
+        Services = serviceProvider;
+
+        if (Services == null) return;
+        var auth0Client = Services.GetRequiredService<Auth0Client>();
+
+        MainPage = new NavigationPage(new MainPage(auth0Client));
     }
 }

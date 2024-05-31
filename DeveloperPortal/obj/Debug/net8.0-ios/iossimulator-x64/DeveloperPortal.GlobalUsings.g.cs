@@ -17,6 +17,7 @@ global using global::Microsoft.Maui.Hosting;
 global using global::Microsoft.Maui.Media;
 global using global::Microsoft.Maui.Networking;
 global using global::Microsoft.Maui.Storage;
+global using global::Sentry;
 global using global::System;
 global using global::System.Collections.Generic;
 global using global::System.IO;

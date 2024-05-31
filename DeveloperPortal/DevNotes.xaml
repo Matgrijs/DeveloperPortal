@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:notes="clr-namespace:DeveloperPortal.Models.Notes"
+             x:Class="DeveloperPortal.DevNotes"
+             x:DataType="notes:Note">
+
+    <ContentPage.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="WidthRequest" Value="100" />
+            <Setter Property="BackgroundColor" Value="#c6002a" />
+        </Style>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Button Text="Back" 
+                    HorizontalOptions="Start" 
+                    Style="{StaticResource ButtonStyle}" 
+                    Clicked="OnBackButtonClicked" 
+                    x:Name="BackButton" />
+
+            <Label Text="Notes" 
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <CollectionView x:Name="NoteList" 
+                        HeightRequest="350" 
+                        SelectionMode="Single" 
+                        SelectionChanged="OnNoteSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" 
+                               Grid.Column="0" 
+                               Text="{Binding Username}" 
+                               Style="{StaticResource LabelStyle}" />
+                        <Label Grid.Row="1" 
+                               Grid.Column="0" 
+                               Text="{Binding Content}" 
+                               Style="{StaticResource LabelStyle}" />
+                        <HorizontalStackLayout 
+                            Grid.Row="2" 
+                            Grid.Column="0" 
+                            Spacing="20">
+                            <Button Text="Edit" 
+                                    Clicked="OnEditNote" 
+                                    Style="{StaticResource ButtonStyle}" 
+                                    CommandParameter="{Binding .}" />
+                            <Button Text="Delete" 
+                                    Clicked="OnDeleteNote" 
+                                    Style="{StaticResource ButtonStyle}" 
+                                    CommandParameter="{Binding .}" />
+                        </HorizontalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Entry x:Name="NoteContent" 
+               Placeholder="Enter your note here..." 
+               VerticalOptions="End" />
+        <Button Text="Create" 
+                VerticalOptions="End" 
+                Style="{StaticResource ButtonStyle}" 
+                Clicked="OnCreateNote" />
+    </VerticalStackLayout>
+</ContentPage>
