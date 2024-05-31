@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DeveloperPortalApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240529185909_RemoveDatesFromNotes")]
-    partial class RemoveDatesFromNotes
+    [Migration("20240531203553_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,16 +53,16 @@ namespace DeveloperPortalApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("bdeac4ba-9960-4c30-bbaa-791c4252bec8"),
+                            Id = new Guid("2453fe8c-5de2-42cf-a393-e25ab7561832"),
                             Message = "Hey developer, leuk dat je er bent!",
                             MessageTime = new DateTimeOffset(new DateTime(2024, 4, 7, 16, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
-                            Username = "Matthijs",
-                            auth0Id = "auth0|661834a129d6402ebd9baa0c"
+                            Username = "Matthijs Meijboom",
+                            auth0Id = "google-oauth2|112201690251789498274"
                         },
                         new
                         {
-                            Id = new Guid("b9250775-52ee-445a-b75b-e3e825c3decc"),
-                            Message = "Hey Matthijs, fijn dat ik er ben!",
+                            Id = new Guid("6540898b-c70c-4625-9a01-92d437be9002"),
+                            Message = "Hey developer!!",
                             MessageTime = new DateTimeOffset(new DateTime(2024, 4, 7, 16, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
                             Username = "Developer",
                             auth0Id = "auth0|661834a129d6402ebd9baa0c"
@@ -94,17 +94,17 @@ namespace DeveloperPortalApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("790a4aa5-ed1f-4f42-9d2d-3a6dd9bc1014"),
+                            Id = new Guid("aca74b08-d1c1-4c48-a17e-77b0e03b0ece"),
                             Content = "Applicatie afmaken!",
-                            Username = "Matthijs",
+                            Username = "Developer",
                             auth0Id = "auth0|661834a129d6402ebd9baa0c"
                         },
                         new
                         {
-                            Id = new Guid("1a38a3c0-d856-49b3-be01-99e9cbf24478"),
-                            Content = "Sell the application!",
-                            Username = "Developer",
-                            auth0Id = "auth0|661834a129d6402ebd9baa0c"
+                            Id = new Guid("727ceb19-d2ab-47ce-9a28-9acde3475c43"),
+                            Content = "Demo voorbereiden!",
+                            Username = "Matthijs Meijboom",
+                            auth0Id = "google-oauth2|112201690251789498274"
                         });
                 });
 
@@ -133,14 +133,14 @@ namespace DeveloperPortalApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b95b7e26-e4fb-4b0e-8859-6d77f174aae5"),
+                            Id = new Guid("6c6d7539-632f-4f1f-ad2e-d7e145c84ec5"),
                             Username = "Matthijs Meijboom",
                             Vote = "☕",
-                            auth0Id = "auth0|661834a129d6402ebd9baa0c"
+                            auth0Id = "google-oauth2|112201690251789498274"
                         },
                         new
                         {
-                            Id = new Guid("0997ac68-85c3-44bf-b78b-1cde8b46c5c4"),
+                            Id = new Guid("2d601ffb-69a4-4317-a1d7-33a0d2fd4908"),
                             Username = "Developer",
                             Vote = "8",
                             auth0Id = "auth0|661834a129d6402ebd9baa0c"

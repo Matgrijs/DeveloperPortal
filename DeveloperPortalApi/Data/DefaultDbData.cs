@@ -1,4 +1,6 @@
-namespace DeveloperPortalApi.Entities;
+using DeveloperPortalApi.Entities;
+
+namespace DeveloperPortalApi.Data;
 
 public static class DefaultDbData
 {
@@ -7,8 +9,8 @@ public static class DefaultDbData
     private static readonly ChatMessage Message1 = new()
     {
         Id = Guid.NewGuid(),
-        Username = "Matthijs",
-        auth0Id = "auth0|661834a129d6402ebd9baa0c",
+        Username = "Matthijs Meijboom",
+        auth0Id = "google-oauth2|112201690251789498274",
         Message = "Hey developer, leuk dat je er bent!",
         MessageTime = new DateTime(2024, 4, 7, 16, 0, 0)
     };
@@ -18,7 +20,7 @@ public static class DefaultDbData
         Id = Guid.NewGuid(),
         Username = "Developer",
         auth0Id = "auth0|661834a129d6402ebd9baa0c",
-        Message = "Hey Matthijs, fijn dat ik er ben!",
+        Message = "Hey developer!!",
         MessageTime = new DateTime(2024, 4, 7, 16, 0, 0)
     };
 
@@ -30,7 +32,7 @@ public static class DefaultDbData
     private static readonly Note Note1 = new()
     {
         Id = Guid.NewGuid(),
-        Username = "Matthijs",
+        Username = "Developer",
         auth0Id = "auth0|661834a129d6402ebd9baa0c",
         Content = "Applicatie afmaken!",
     };
@@ -38,9 +40,9 @@ public static class DefaultDbData
     private static readonly Note Note2 = new()
     {
         Id = Guid.NewGuid(),
-        Username = "Developer",
-        auth0Id = "auth0|661834a129d6402ebd9baa0c",
-        Content = "Sell the application!",
+        Username = "Matthijs Meijboom",
+        auth0Id = "google-oauth2|112201690251789498274",
+        Content = "Demo voorbereiden!",
     };
 
     #endregion
@@ -52,7 +54,7 @@ public static class DefaultDbData
     {
         Id = Guid.NewGuid(),
         Username = "Matthijs Meijboom",
-        auth0Id = "auth0|661834a129d6402ebd9baa0c",
+        auth0Id = "google-oauth2|112201690251789498274",
         Vote = "\u2615"
     };
 
