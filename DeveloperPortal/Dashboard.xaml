@@ -1,81 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DeveloperPortal.Dashboard">
+             xmlns:viewmodel="clr-namespace:DeveloperPortal.ViewModels"
+             x:Class="DeveloperPortal.Dashboard"
+             x:DataType="viewmodel:DashboardViewModel"
+             Title="{Binding Title}">
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Label
-                Text="Dashboard"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-            <Grid RowSpacing="10" ColumnSpacing="10" WidthRequest="520">
+            <Grid RowSpacing="10" ColumnSpacing="10" WidthRequest="770">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 
-                <Button 
-                    Text="Planning poker"
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="PlanningPokerButton" />
-                <Button
-                    Text="Notes"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="NotesButton" />
                 <Button
                     Text="Sentry Errors"
-                    Grid.Row="1"
+                    Grid.Row="0"
                     Grid.Column="0"
                     HeightRequest="250"
                     WidthRequest="250"
                     BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="ErrorButton" />
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="Sentry Errors" />
                 <Button
                     Text="Jira Issues"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="250"
+                    WidthRequest="250"
+                    BackgroundColor="#c6002a"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="Jira Issues" />
+                <Button
+                    Text="Chat"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    HeightRequest="250"
+                    WidthRequest="250"
+                    BackgroundColor="#c6002a"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="Chat" />
+                <Button 
+                    Text="Planning poker"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HeightRequest="250"
+                    WidthRequest="250"
+                    BackgroundColor="#c6002a"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="Planning poker" />
+                <Button
+                    Text="Notes"
                     Grid.Row="1"
                     Grid.Column="1"
                     HeightRequest="250"
                     WidthRequest="250"
                     BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="BugButton" />
-                <Button
-                    Text="Chat"
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="ChatButton" />
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="Notes" />
+
                 <Button
                     Text="Profile"
-                    Grid.Row="2"
-                    Grid.Column="1"
+                    Grid.Row="1"
+                    Grid.Column="2"
                     HeightRequest="250"
                     WidthRequest="250"
                     BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="ProfileButton" />
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="Profile" />
             </Grid>
         </VerticalStackLayout>
     </ScrollView>

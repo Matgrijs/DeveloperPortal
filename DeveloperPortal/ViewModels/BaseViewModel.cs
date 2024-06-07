@@ -1,15 +1,15 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace DeveloperPortal.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public partial class BaseViewModel : ObservableObject
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        [ObservableProperty]
+        private bool isBusy;
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        [ObservableProperty]
+        private string title;
+
+        public bool IsNotBusy => !IsBusy;
     }
 }

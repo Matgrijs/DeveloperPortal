@@ -1,29 +1,12 @@
-﻿using DeveloperPortal.Services;
+﻿using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
 
-public partial class DevProfile
+public partial class DevProfile : ContentPage
 {
-    private readonly NavigationService _navigationService;
-    public DevProfile(NavigationService navigationService)
+    public DevProfile()
     {
         InitializeComponent();
-        
-        _navigationService = navigationService;
-    }
-
-    private void OnAvansThemeClicked(object sender, EventArgs e)
-    {
-        // TODO implement
-    }
-    
-    private void OnRoundedThemeClicked(object sender, EventArgs e)
-    {
-        // TODO implement
-    }
-    
-    private async void OnBackButtonClicked(object sender, EventArgs e)
-    {
-        await _navigationService.OnBackButtonClickedAsync();
+        BindingContext = new DevProfileViewModel();
     }
 }

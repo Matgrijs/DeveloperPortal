@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="DeveloperPortal.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:DeveloperPortal"
-    Shell.FlyoutBehavior="Disabled"
-    Title="DeveloperPortal">
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:DeveloperPortal"
+       Title="Developer Portal"
+       x:Class="DeveloperPortal.AppShell">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate local:Dashboard}" Route="dashboard" />
+    <ShellContent Title="Planning Poker" ContentTemplate="{DataTemplate local:DevPlanningPoker}" Route="planningpoker" />
+    <ShellContent Title="Notes" ContentTemplate="{DataTemplate local:DevNotes}" Route="notes" />
+    <ShellContent Title="Sentry Errors" ContentTemplate="{DataTemplate local:SentryErrors}" Route="sentryerrors" />
+    <ShellContent Title="Jira Issues" ContentTemplate="{DataTemplate local:JiraIssues}" Route="jiraissues" />
+    <ShellContent Title="Chat" ContentTemplate="{DataTemplate local:DevChat}" Route="chat" />
+    <ShellContent Title="Profile" ContentTemplate="{DataTemplate local:DevProfile}" Route="profile" />
 
 </Shell>

@@ -6,6 +6,7 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ma
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Auth0.ManagementApi.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Auth0.OidcClient.Core.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Auth0.OidcClient.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Mvvm.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\IdentityModel.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\IdentityModel.OidcClient.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.Connections.Abstractions.dll
@@ -295,9 +296,6 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ma
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.inputs
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.inputs
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.stamp
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@3x.png
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@2x.png
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
@@ -340,3 +338,5 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ma
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\DeveloperPortal.pdb
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\DeveloperPortal.genruntimeconfig.cache
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ref\DeveloperPortal.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Plugin.Maui.Audio.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Xamarin.Essentials.dll

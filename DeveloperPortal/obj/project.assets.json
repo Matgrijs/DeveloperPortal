@@ -88,6 +88,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -1010,6 +1026,19 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Sentry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -1172,6 +1201,15 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
@@ -2794,6 +2832,23 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0",
+          "Xamarin.AndroidX.Browser": "[1.3.0.5, 1.6.0]"
+        },
+        "compile": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -3107,6 +3162,22 @@
           "lib/net6.0-android29.0/Auth0.OidcClient.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
       "GoogleGson/2.10.1.4": {
@@ -4031,6 +4102,19 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Sentry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -4183,6 +4267,15 @@
         },
         "runtime": {
           "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
@@ -5797,6 +5890,23 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0",
+          "Xamarin.AndroidX.Browser": "[1.3.0.5, 1.6.0]"
+        },
+        "compile": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Xamarin.Google.Android.Material/1.9.0.2": {
@@ -6114,6 +6224,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -7036,6 +7162,19 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Sentry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -7188,6 +7327,15 @@
         },
         "runtime": {
           "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
@@ -8802,6 +8950,23 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0",
+          "Xamarin.AndroidX.Browser": "[1.3.0.5, 1.6.0]"
+        },
+        "compile": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Xamarin.Google.Android.Material/1.9.0.2": {
@@ -9119,6 +9284,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -10041,6 +10222,19 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Sentry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -10193,6 +10387,15 @@
         },
         "runtime": {
           "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
@@ -11807,6 +12010,23 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0",
+          "Xamarin.AndroidX.Browser": "[1.3.0.5, 1.6.0]"
+        },
+        "compile": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Xamarin.Google.Android.Material/1.9.0.2": {
@@ -12124,6 +12344,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -13046,6 +13282,19 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Sentry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -13198,6 +13447,15 @@
         },
         "runtime": {
           "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
@@ -14812,6 +15070,23 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0",
+          "Xamarin.AndroidX.Browser": "[1.3.0.5, 1.6.0]"
+        },
+        "compile": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Xamarin.Google.Android.Material/1.9.0.2": {
@@ -15129,6 +15404,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -16051,6 +16342,19 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Sentry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -16203,6 +16507,15 @@
         },
         "runtime": {
           "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
@@ -17817,6 +18130,23 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0",
+          "Xamarin.AndroidX.Browser": "[1.3.0.5, 1.6.0]"
+        },
+        "compile": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Xamarin.Google.Android.Material/1.9.0.2": {
@@ -18134,6 +18464,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -19056,6 +19402,19 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Sentry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -19208,6 +19567,15 @@
         },
         "runtime": {
           "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
@@ -20822,6 +21190,23 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0",
+          "Xamarin.AndroidX.Browser": "[1.3.0.5, 1.6.0]"
+        },
+        "compile": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Xamarin.Google.Android.Material/1.9.0.2": {
@@ -21139,6 +21524,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -22061,6 +22462,19 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Plugin.Maui.Audio.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Sentry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -22213,6 +22627,15 @@
         },
         "runtime": {
           "lib/monoandroid10/_._": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
@@ -23827,6 +24250,23 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0",
+          "Xamarin.AndroidX.Browser": "[1.3.0.5, 1.6.0]"
+        },
+        "compile": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid13.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Xamarin.Google.Android.Material/1.9.0.2": {
@@ -24145,6 +24585,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -25035,6 +25491,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
         "type": "package",
         "runtimeTargets": {
@@ -25550,6 +26018,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Reflection/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -25959,6 +26436,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -26051,6 +26544,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -26955,6 +27464,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -27646,6 +28167,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -28046,6 +28576,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -28138,6 +28684,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -29042,6 +29604,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -29733,6 +30307,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -30133,6 +30716,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -30225,6 +30824,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -31129,6 +31744,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -31820,6 +32447,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -32220,6 +32856,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -32312,6 +32964,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -33216,6 +33884,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -33907,6 +34587,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -34307,6 +34996,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -34399,6 +35104,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -35303,6 +36024,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -35994,6 +36727,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -36394,6 +37136,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -36486,6 +37244,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -37390,6 +38164,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -38081,6 +38867,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -38483,6 +39278,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     },
     "net8.0-ios17.2/win10-x64": {
@@ -38571,6 +39382,22 @@
           "lib/net6.0-ios13.0/Auth0.OidcClient.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
       "IdentityModel/5.2.0": {
@@ -39477,6 +40304,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -40158,6 +40997,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -40577,6 +41425,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     },
     "net8.0-maccatalyst17.2": {
@@ -40665,6 +41529,22 @@
           "lib/net6.0-maccatalyst14.0/Auth0.OidcClient.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
       "IdentityModel/5.2.0": {
@@ -41555,6 +42435,18 @@
           "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -42072,6 +42964,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Reflection/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -42483,6 +43384,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     },
     "net8.0-maccatalyst17.2/android-arm": {
@@ -42571,6 +43488,22 @@
           "lib/net6.0-maccatalyst14.0/Auth0.OidcClient.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
       "IdentityModel/5.2.0": {
@@ -43477,6 +44410,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -44168,6 +45113,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -44568,6 +45522,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -44660,6 +45630,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -45564,6 +46550,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -46255,6 +47253,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -46655,6 +47662,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -46747,6 +47770,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -47651,6 +48690,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -48342,6 +49393,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -48742,6 +49802,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -48834,6 +49910,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -49738,6 +50830,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -50429,6 +51533,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -50829,6 +51942,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -50921,6 +52050,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -51825,6 +52970,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -52516,6 +53673,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -52916,6 +54082,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -53008,6 +54190,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -53912,6 +55110,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -54603,6 +55813,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -55005,6 +56224,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     },
     "net8.0-maccatalyst17.2/win10-x64": {
@@ -55093,6 +56328,22 @@
           "lib/net6.0-maccatalyst14.0/Auth0.OidcClient.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
       "IdentityModel/5.2.0": {
@@ -55999,6 +57250,18 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -56680,6 +57943,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -57099,6 +58371,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     },
     "net8.0-windows10.0.19041": {
@@ -57189,6 +58477,22 @@
           "lib/net6.0-windows10.0.19041/Auth0.OidcClient.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
       "IdentityModel/5.2.0": {
@@ -58236,6 +59540,15 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
         "type": "package",
         "runtimeTargets": {
@@ -58732,6 +60045,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Reflection/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -59135,6 +60457,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     },
     "net8.0-windows10.0.19041/android-arm": {
@@ -59225,6 +60563,22 @@
           "lib/net6.0-windows10.0.19041/Auth0.OidcClient.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
       "IdentityModel/5.2.0": {
@@ -60246,6 +61600,15 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -60918,6 +62281,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -61310,6 +62682,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -61404,6 +62792,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -62423,6 +63827,15 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -63095,6 +64508,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -63487,6 +64909,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -63581,6 +65019,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -64600,6 +66054,15 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -65272,6 +66735,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -65664,6 +67136,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -65758,6 +67246,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -66777,6 +68281,15 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -67449,6 +68962,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -67841,6 +69363,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -67935,6 +69473,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -68954,6 +70508,15 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -69626,6 +71189,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -70018,6 +71590,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
           }
         }
       }
@@ -70112,6 +71700,22 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "IdentityModel/5.2.0": {
         "type": "package",
         "compile": {
@@ -71131,6 +72735,15 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -71803,6 +73416,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -72197,6 +73819,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     },
     "net8.0-windows10.0.19041/win10-x64": {
@@ -72287,6 +73925,22 @@
           "lib/net6.0-windows10.0.19041/Auth0.OidcClient.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
       "IdentityModel/5.2.0": {
@@ -73314,6 +74968,15 @@
           }
         }
       },
+      "Plugin.Maui.Audio/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -73976,6 +75639,15 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Private.Uri/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -74387,6 +76059,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Xamarin.Essentials/1.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     }
   },
@@ -74473,6 +76161,37 @@
         "lib/net6.0-windows10.0.19041/Auth0.OidcClient.MAUI.Platforms.Windows.dll",
         "lib/net6.0-windows10.0.19041/Auth0.OidcClient.dll",
         "lib/net6.0-windows10.0.19041/Auth0.OidcClient.xml"
+      ]
+    },
+    "CommunityToolkit.Mvvm/8.2.2": {
+      "sha512": "r0g0k9tGYdrnz8R7T3x5UiokDffeevzK/2P/9SBL6fqLgN8B157MIi/bVUWI1KAz6ZorZrK9AdABCWUeXZZsvA==",
+      "type": "package",
+      "path": "communitytoolkit.mvvm/8.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "analyzers/dotnet/roslyn4.0/cs/CommunityToolkit.Mvvm.CodeFixers.dll",
+        "analyzers/dotnet/roslyn4.0/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/roslyn4.3/cs/CommunityToolkit.Mvvm.CodeFixers.dll",
+        "analyzers/dotnet/roslyn4.3/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "build/netstandard2.0/CommunityToolkit.Mvvm.targets",
+        "build/netstandard2.1/CommunityToolkit.Mvvm.targets",
+        "buildTransitive/netstandard2.0/CommunityToolkit.Mvvm.targets",
+        "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets",
+        "communitytoolkit.mvvm.8.2.2.nupkg.sha512",
+        "communitytoolkit.mvvm.nuspec",
+        "lib/net6.0/CommunityToolkit.Mvvm.dll",
+        "lib/net6.0/CommunityToolkit.Mvvm.pdb",
+        "lib/net6.0/CommunityToolkit.Mvvm.xml",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.dll",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.pdb",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.xml",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.dll",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.pdb",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.xml"
       ]
     },
     "GoogleGson/2.10.1.4": {
@@ -77353,6 +79072,24 @@
         "packageIcon.png"
       ]
     },
+    "Plugin.Maui.Audio/2.0.0": {
+      "sha512": "0XAwMMxYFPCOb/N69Uf+GCCe4OnETfV2mz9eFA2+gYsmw4ayMhtwmiOo5qECOISXnXNqwxkK4ACmFmlZ7+AR6Q==",
+      "type": "package",
+      "path": "plugin.maui.audio/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0-android31.0/Plugin.Maui.Audio.dll",
+        "lib/net6.0-android31.0/Plugin.Maui.Audio.xml",
+        "lib/net6.0-ios16.1/Plugin.Maui.Audio.dll",
+        "lib/net6.0-maccatalyst16.1/Plugin.Maui.Audio.dll",
+        "lib/net6.0-windows10.0.19041/Plugin.Maui.Audio.dll",
+        "lib/net6.0/Plugin.Maui.Audio.dll",
+        "plugin.maui.audio.2.0.0.nupkg.sha512",
+        "plugin.maui.audio.nuspec"
+      ]
+    },
     "runtime.any.System.Collections/4.3.0": {
       "sha512": "23g6rqftKmovn2cLeGsuHUYm0FD7pdutb0uQMJpZ3qTvq+zHkgmt6J65VtRry4WDGYlmkMa4xDACtaQ94alNag==",
       "type": "package",
@@ -79216,6 +80953,53 @@
         "ref/xamarinwatchos10/_._",
         "system.net.primitives.4.3.0.nupkg.sha512",
         "system.net.primitives.nuspec"
+      ]
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "type": "package",
+      "path": "system.numerics.vectors/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Numerics.Vectors.dll",
+        "lib/net46/System.Numerics.Vectors.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Numerics.Vectors.dll",
+        "lib/netstandard1.0/System.Numerics.Vectors.xml",
+        "lib/netstandard2.0/System.Numerics.Vectors.dll",
+        "lib/netstandard2.0/System.Numerics.Vectors.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.Numerics.Vectors.dll",
+        "ref/net45/System.Numerics.Vectors.xml",
+        "ref/net46/System.Numerics.Vectors.dll",
+        "ref/net46/System.Numerics.Vectors.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Numerics.Vectors.dll",
+        "ref/netstandard1.0/System.Numerics.Vectors.xml",
+        "ref/netstandard2.0/System.Numerics.Vectors.dll",
+        "ref/netstandard2.0/System.Numerics.Vectors.xml",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.numerics.vectors.4.5.0.nupkg.sha512",
+        "system.numerics.vectors.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Private.Uri/4.3.0": {
@@ -82281,6 +84065,48 @@
         "xamarin.androidx.window.extensions.core.core.nuspec"
       ]
     },
+    "Xamarin.Essentials/1.8.1": {
+      "sha512": "IzfRGrCrRuytgdQU+Im17Cepib6qUyLj1xfMjn+sDPTfmhmcZotsQCm5Dblm4Vxo9/SGFTdm1OgJUKWzu+dfjw==",
+      "type": "package",
+      "path": "xamarin.essentials/1.8.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/monoandroid13.0/Xamarin.Essentials.dll",
+        "lib/monoandroid13.0/Xamarin.Essentials.pdb",
+        "lib/monoandroid13.0/Xamarin.Essentials.xml",
+        "lib/netstandard1.0/Xamarin.Essentials.dll",
+        "lib/netstandard1.0/Xamarin.Essentials.pdb",
+        "lib/netstandard1.0/Xamarin.Essentials.xml",
+        "lib/netstandard2.0/Xamarin.Essentials.dll",
+        "lib/netstandard2.0/Xamarin.Essentials.pdb",
+        "lib/netstandard2.0/Xamarin.Essentials.xml",
+        "lib/tizen40/Xamarin.Essentials.dll",
+        "lib/tizen40/Xamarin.Essentials.pdb",
+        "lib/tizen40/Xamarin.Essentials.xml",
+        "lib/uap10.0.16299/Xamarin.Essentials.dll",
+        "lib/uap10.0.16299/Xamarin.Essentials.pdb",
+        "lib/uap10.0.16299/Xamarin.Essentials.pri",
+        "lib/uap10.0.16299/Xamarin.Essentials.xml",
+        "lib/xamarinios10/Xamarin.Essentials.dll",
+        "lib/xamarinios10/Xamarin.Essentials.pdb",
+        "lib/xamarinios10/Xamarin.Essentials.xml",
+        "lib/xamarinmac20/Xamarin.Essentials.dll",
+        "lib/xamarinmac20/Xamarin.Essentials.pdb",
+        "lib/xamarinmac20/Xamarin.Essentials.xml",
+        "lib/xamarintvos10/Xamarin.Essentials.dll",
+        "lib/xamarintvos10/Xamarin.Essentials.pdb",
+        "lib/xamarintvos10/Xamarin.Essentials.xml",
+        "lib/xamarinwatchos10/Xamarin.Essentials.dll",
+        "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
+        "lib/xamarinwatchos10/Xamarin.Essentials.xml",
+        "readme.txt",
+        "xamarin.essentials.1.8.1.nupkg.sha512",
+        "xamarin.essentials.nuspec"
+      ]
+    },
     "Xamarin.Google.Android.Material/1.9.0.2": {
       "sha512": "sLmA5Kff8m4CjjUqYc8SZKjXpOF9xIAFJc2eNNfd8T0NY9bb6tbl6YL2rjUxCNI1qfs4qHaDHm/cDrEwI5DGfQ==",
       "type": "package",
@@ -82543,6 +84369,7 @@
       "Auth0.AuthenticationApi >= 7.26.2",
       "Auth0.ManagementApi >= 7.26.2",
       "Auth0.OidcClient.MAUI >= 1.0.0",
+      "CommunityToolkit.Mvvm >= 8.2.2",
       "Microsoft.AspNetCore.SignalR.Client >= 8.0.4",
       "Microsoft.Extensions.Localization >= 9.0.0-preview.4.24267.6",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
@@ -82551,13 +84378,16 @@
       "Microsoft.Maui.Essentials >= 8.0.40",
       "Microsoft.NET.ILLink.Tasks >= 8.0.2",
       "Newtonsoft.Json >= 13.0.3",
+      "Plugin.Maui.Audio >= 2.0.0",
       "Sentry.Maui >= 4.7.0",
-      "System.Net.Http >= 4.3.4"
+      "System.Net.Http >= 4.3.4",
+      "Xamarin.Essentials >= 1.8.1"
     ],
     "net8.0-ios17.2": [
       "Auth0.AuthenticationApi >= 7.26.2",
       "Auth0.ManagementApi >= 7.26.2",
       "Auth0.OidcClient.MAUI >= 1.0.0",
+      "CommunityToolkit.Mvvm >= 8.2.2",
       "Microsoft.AspNetCore.SignalR.Client >= 8.0.4",
       "Microsoft.Extensions.Localization >= 9.0.0-preview.4.24267.6",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
@@ -82566,13 +84396,16 @@
       "Microsoft.Maui.Essentials >= 8.0.40",
       "Microsoft.NET.ILLink.Tasks >= 8.0.2",
       "Newtonsoft.Json >= 13.0.3",
+      "Plugin.Maui.Audio >= 2.0.0",
       "Sentry.Maui >= 4.7.0",
-      "System.Net.Http >= 4.3.4"
+      "System.Net.Http >= 4.3.4",
+      "Xamarin.Essentials >= 1.8.1"
     ],
     "net8.0-maccatalyst17.2": [
       "Auth0.AuthenticationApi >= 7.26.2",
       "Auth0.ManagementApi >= 7.26.2",
       "Auth0.OidcClient.MAUI >= 1.0.0",
+      "CommunityToolkit.Mvvm >= 8.2.2",
       "Microsoft.AspNetCore.SignalR.Client >= 8.0.4",
       "Microsoft.Extensions.Localization >= 9.0.0-preview.4.24267.6",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
@@ -82581,13 +84414,16 @@
       "Microsoft.Maui.Essentials >= 8.0.40",
       "Microsoft.NET.ILLink.Tasks >= 8.0.2",
       "Newtonsoft.Json >= 13.0.3",
+      "Plugin.Maui.Audio >= 2.0.0",
       "Sentry.Maui >= 4.7.0",
-      "System.Net.Http >= 4.3.4"
+      "System.Net.Http >= 4.3.4",
+      "Xamarin.Essentials >= 1.8.1"
     ],
     "net8.0-windows10.0.19041": [
       "Auth0.AuthenticationApi >= 7.26.2",
       "Auth0.ManagementApi >= 7.26.2",
       "Auth0.OidcClient.MAUI >= 1.0.0",
+      "CommunityToolkit.Mvvm >= 8.2.2",
       "Microsoft.AspNetCore.SignalR.Client >= 8.0.4",
       "Microsoft.Extensions.Localization >= 9.0.0-preview.4.24267.6",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
@@ -82595,8 +84431,10 @@
       "Microsoft.Maui.Controls.Compatibility >= 8.0.6",
       "Microsoft.Maui.Essentials >= 8.0.40",
       "Newtonsoft.Json >= 13.0.3",
+      "Plugin.Maui.Audio >= 2.0.0",
       "Sentry.Maui >= 4.7.0",
-      "System.Net.Http >= 4.3.4"
+      "System.Net.Http >= 4.3.4",
+      "Xamarin.Essentials >= 1.8.1"
     ]
   },
   "packageFolders": {
@@ -82671,6 +84509,10 @@
             "target": "Package",
             "version": "[1.0.0, )"
           },
+          "CommunityToolkit.Mvvm": {
+            "target": "Package",
+            "version": "[8.2.2, )"
+          },
           "Microsoft.AspNetCore.SignalR.Client": {
             "target": "Package",
             "version": "[8.0.4, )"
@@ -82705,6 +84547,10 @@
             "target": "Package",
             "version": "[13.0.3, )"
           },
+          "Plugin.Maui.Audio": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Sentry.Maui": {
             "target": "Package",
             "version": "[4.7.0, )"
@@ -82712,6 +84558,10 @@
           "System.Net.Http": {
             "target": "Package",
             "version": "[4.3.4, )"
+          },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.8.1, )"
           }
         },
         "imports": [
@@ -82750,6 +84600,10 @@
             "target": "Package",
             "version": "[1.0.0, )"
           },
+          "CommunityToolkit.Mvvm": {
+            "target": "Package",
+            "version": "[8.2.2, )"
+          },
           "Microsoft.AspNetCore.SignalR.Client": {
             "target": "Package",
             "version": "[8.0.4, )"
@@ -82784,6 +84638,10 @@
             "target": "Package",
             "version": "[13.0.3, )"
           },
+          "Plugin.Maui.Audio": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Sentry.Maui": {
             "target": "Package",
             "version": "[4.7.0, )"
@@ -82791,6 +84649,10 @@
           "System.Net.Http": {
             "target": "Package",
             "version": "[4.3.4, )"
+          },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.8.1, )"
           }
         },
         "imports": [
@@ -82829,6 +84691,10 @@
             "target": "Package",
             "version": "[1.0.0, )"
           },
+          "CommunityToolkit.Mvvm": {
+            "target": "Package",
+            "version": "[8.2.2, )"
+          },
           "Microsoft.AspNetCore.SignalR.Client": {
             "target": "Package",
             "version": "[8.0.4, )"
@@ -82863,6 +84729,10 @@
             "target": "Package",
             "version": "[13.0.3, )"
           },
+          "Plugin.Maui.Audio": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Sentry.Maui": {
             "target": "Package",
             "version": "[4.7.0, )"
@@ -82870,6 +84740,10 @@
           "System.Net.Http": {
             "target": "Package",
             "version": "[4.3.4, )"
+          },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.8.1, )"
           }
         },
         "imports": [
@@ -82909,6 +84783,10 @@
             "target": "Package",
             "version": "[1.0.0, )"
           },
+          "CommunityToolkit.Mvvm": {
+            "target": "Package",
+            "version": "[8.2.2, )"
+          },
           "Microsoft.AspNetCore.SignalR.Client": {
             "target": "Package",
             "version": "[8.0.4, )"
@@ -82937,6 +84815,10 @@
             "target": "Package",
             "version": "[13.0.3, )"
           },
+          "Plugin.Maui.Audio": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Sentry.Maui": {
             "target": "Package",
             "version": "[4.7.0, )"
@@ -82944,6 +84826,10 @@
           "System.Net.Http": {
             "target": "Package",
             "version": "[4.3.4, )"
+          },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.8.1, )"
           }
         },
         "imports": [

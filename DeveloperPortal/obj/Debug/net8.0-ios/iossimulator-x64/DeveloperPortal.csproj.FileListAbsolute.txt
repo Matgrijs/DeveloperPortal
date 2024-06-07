@@ -6,6 +6,7 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-io
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Auth0.ManagementApi.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Auth0.OidcClient.Core.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Auth0.OidcClient.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\CommunityToolkit.Mvvm.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\IdentityModel.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\IdentityModel.OidcClient.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.AspNetCore.Connections.Abstractions.dll
@@ -309,9 +310,9 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-io
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\mauisplash.inputs
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\MauiInfo.plist
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\MauiSplash.storyboard
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449.png
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@2x.png
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@3x.png
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_673081B8A0A56D21677E1AC400D187F94BA00EF64439F7B0AD15A08F827F7867.png
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_673081B8A0A56D21677E1AC400D187F94BA00EF64439F7B0AD15A08F827F7867@2x.png
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_673081B8A0A56D21677E1AC400D187F94BA00EF64439F7B0AD15A08F827F7867@3x.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\mauisplash.stamp
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
@@ -325,12 +326,9 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-io
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@3x.png
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@2x.png
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot.png
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\user.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\logo_avans.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\save_mobile.png
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\user.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.stamp
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\f\MauiInfo.plist
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\mauifont.stamp
@@ -360,3 +358,5 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-io
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.pdb
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.genruntimeconfig.cache
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\ref\DeveloperPortal.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Plugin.Maui.Audio.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Xamarin.Essentials.dll

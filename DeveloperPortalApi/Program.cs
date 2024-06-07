@@ -60,6 +60,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MapHub<ChatHub>("/chatHub");
-app.MapHub<PokerHub>("/pokerHub");
+app.MapHub<PokerHub>("/planningPokerHub");
 
 app.Run();

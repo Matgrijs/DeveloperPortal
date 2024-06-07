@@ -18,19 +18,6 @@ public class PokerController(ApplicationDbContext context, PokerService pokerSer
         var pokerVotes = await context.PokerVotes.ToListAsync();
         return pokerVotes;
     }
-    
-    [HttpGet("{id}")]
-    public async Task<ActionResult<PokerVote>> GetPokerVote(Guid id)
-    {
-        var pokerVote = await context.PokerVotes.FindAsync(id);
-
-        if (pokerVote == null)
-        {
-            return NotFound();
-        }
-
-        return pokerVote;
-    }
 
     [HttpPost]
     public async Task<IActionResult> PostVote(PokerVote pokerVote)

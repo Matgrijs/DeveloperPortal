@@ -1,26 +1,38 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DeveloperPortal.JiraIssues">
+             xmlns:viewmodel="clr-namespace:DeveloperPortal.ViewModels"
+             xmlns:jiraIssues="clr-namespace:DeveloperPortal.Models.JiraIssues"
+             x:Class="DeveloperPortal.JiraIssues"
+             x:DataType="viewmodel:JiraIssueViewModel"
+             Title="{Binding Title}"
+             x:Name="Page">
 
-    <StackLayout Padding="10">
-        <Button Text="Back" 
-                HorizontalOptions="Start" 
-                WidthRequest="100" 
-                Clicked="OnBackButtonClicked"
-                Grid.Row="0" 
-                VerticalOptions="Center"
-                BackgroundColor="#c6002a"
-                Margin="10,0" />
-        <Label Text="Jira Issues - Bugs" FontSize="Large" HorizontalOptions="Center"/>
-        <CollectionView x:Name="IssuesCollectionView">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10" BackgroundColor="LightGray" Margin="5">
-                        <Label Text="{Binding Key}" FontAttributes="Bold"/>
-                        <Label Text="{Binding Fields.Summary}"/>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </StackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <CollectionView IsVisible="{Binding IsNotBusy}" ItemsSource="{Binding JiraIssues}" SelectionMode="None" Margin="0,0,0,10">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="jiraIssues:JiraIssue">
+                        <Frame Padding="10" Margin="10" CornerRadius="8" BackgroundColor="White" HasShadow="True">
+                            <Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="Auto, Auto">
+                                <Frame WidthRequest="40" HeightRequest="40" CornerRadius="20" BackgroundColor="#c6002a" VerticalOptions="Center" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Margin="0,0,10,0"/>
+                                <StackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="{Binding Key}" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label Text="{Binding Fields.Summary}" FontSize="Small" TextColor="Gray"/>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            <ActivityIndicator
+                IsVisible="{Binding IsBusy}"
+                IsRunning="{Binding IsBusy}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

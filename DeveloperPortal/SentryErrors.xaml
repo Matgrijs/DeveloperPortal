@@ -1,33 +1,42 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:DeveloperPortal"
-             x:Class="DeveloperPortal.SentryErrors">
+             xmlns:viewmodel="clr-namespace:DeveloperPortal.ViewModels"
+             xmlns:sentryErrors="clr-namespace:DeveloperPortal.Models.SentryErrors"
+             x:Class="DeveloperPortal.SentryErrors"
+             x:DataType="viewmodel:SentryErrorViewModel"
+             Title="{Binding Title}">
 
-    <StackLayout>
-        <Button Text="Back" 
-                HorizontalOptions="Start" 
-                WidthRequest="100" 
-                Clicked="OnBackButtonClicked"
-                VerticalOptions="Center"
-                BackgroundColor="#c6002a"
-                Margin="10,0" />
-        <ListView x:Name="ErrorsListView">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Vertical" Padding="10">
-                            <Label Text="{Binding Title}" FontAttributes="Bold" />
-                            <Label Text="{Binding Culprit}" />
-                            <Button Text="Create Issue"
-                                    HorizontalOptions="Start"
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <CollectionView IsVisible="{Binding IsNotBusy}" ItemsSource="{Binding Errors}" SelectionMode="None" x:Name="ErrorsListView" Margin="0,0,0,10">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="sentryErrors:SentryError">
+                        <Frame Padding="10" Margin="10" CornerRadius="8" BackgroundColor="White" HasShadow="True">
+                            <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto">
+                                <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Text="{Binding Title}" FontAttributes="Bold" FontSize="Small" />
+                                <Button Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
+                                    Text="Create Issue"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Center"
                                     WidthRequest="150"
-                                    Clicked="CreateJiraBug"
+                                    Command="{Binding Source={x:Reference ErrorsListView}, Path=BindingContext.CreateJiraBugCommand}"
+                                    CommandParameter="{Binding .}"
                                     BackgroundColor="#c6002a"
                                     Margin="10,0" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            <ActivityIndicator
+               IsVisible="{Binding IsBusy}"
+               IsRunning="{Binding IsBusy}"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="CenterAndExpand" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

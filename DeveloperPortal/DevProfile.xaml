@@ -1,38 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DeveloperPortal.DevProfile">
+             xmlns:viewmodel="clr-namespace:DeveloperPortal.ViewModels"
+             x:Class="DeveloperPortal.DevProfile"
+             x:DataType="viewmodel:DevProfileViewModel"
+             Title="Profile">
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Button Text="Back" 
-                    HorizontalOptions="Start" 
-                    WidthRequest="100" 
-                    Clicked="OnBackButtonClicked"
-                    Grid.Row="0" 
-                    VerticalOptions="Center"
-                    BackgroundColor="#c6002a"
-                    Margin="10,0" />
-            <Label
-                Text="Dashboard"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-                <Button 
-                    Text="Avans Theme"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnAvansThemeClicked"
-                    x:Name="AvansThemeButton" />
-                <Button 
-                    Text="Rounded Theme"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnRoundedThemeClicked"
-                    x:Name="RoundedThemeButton" />
+            <Button 
+                Text="Avans Theme"
+                HeightRequest="250"
+                WidthRequest="250"
+                BackgroundColor="#c6002a"
+                Command="{Binding AvansThemeCommand}" />
+            <Button 
+                Text="Rounded Theme"
+                HeightRequest="250"
+                WidthRequest="250"
+                BackgroundColor="#c6002a"
+                Command="{Binding RoundedThemeCommand}" />
         </VerticalStackLayout>
     </ScrollView>
 

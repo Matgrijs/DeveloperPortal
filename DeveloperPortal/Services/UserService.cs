@@ -1,11 +1,7 @@
-﻿using Auth0.AuthenticationApi;
-using Auth0.ManagementApi;
+﻿using Auth0.ManagementApi;
 using Auth0.ManagementApi.Models;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using User = DeveloperPortal.Models.Users.User;
 
 namespace DeveloperPortal.Services
 {
@@ -21,7 +17,7 @@ namespace DeveloperPortal.Services
             _logger = logger;
         }
 
-        public async Task<IList<CustomUser>> GetUsersAsync()
+        public async Task<IList<User>> GetUsersAsync()
         {
             try
             {
@@ -33,7 +29,7 @@ namespace DeveloperPortal.Services
 
                 var managementApiClient = new ManagementApiClient(token, new Uri($"https://{_domain}/api/v2/"));
                 var users = await managementApiClient.Users.GetAllAsync(new GetUsersRequest());
-                return users.Select(u => new CustomUser
+                return users.Select(u => new User()
                 {
                     Name = u.FullName,
                 }).ToList();
@@ -43,12 +39,6 @@ namespace DeveloperPortal.Services
                 SentrySdk.CaptureException(ex);
                 throw;
             }
-        }
-
-        public class CustomUser
-        {
-            public string Name { get; set; }
-            public string SelectedValue { get; set; }
         }
 
     }

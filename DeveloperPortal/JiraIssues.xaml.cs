@@ -1,41 +1,17 @@
-﻿using System.Collections.ObjectModel;
-using DeveloperPortal.Services;
+﻿using DeveloperPortal.Services;
+using DeveloperPortal.ViewModels;
 
-namespace DeveloperPortal;
-
-public partial class JiraIssues
+namespace DeveloperPortal
 {
-    public ObservableCollection<JiraIssue> Issues { get; set; }
-    private readonly NavigationService _navigationService;
-    public JiraIssues(NavigationService navigationService)
+    public partial class JiraIssues : ContentPage
     {
-        InitializeComponent();
-        _navigationService = navigationService;
-        
-        Issues = new ObservableCollection<JiraIssue>();
-        IssuesCollectionView.ItemsSource = Issues;
-        LoadIssues();
-    }
+        public JiraIssues(JiraService jiraService)
+        {
+            InitializeComponent();
+            BindingContext = new JiraIssueViewModel(jiraService);
 
-    private async void LoadIssues()
-    {
-        try
-        {
-            var jiraService = new JiraService();
-            var issues = await jiraService.GetIssuesByTypeAsync("Bug");
-            foreach (var issue in issues)
-            {
-                Issues.Add(issue);
-            }
+            // Call the GetJiraIssuesAsync method when the page appears
+            Appearing += async (sender, e) => await ((JiraIssueViewModel)BindingContext).GetJiraIssues();
         }
-        catch (Exception ex)
-        {
-            SentrySdk.CaptureException(ex);
-        }
-    }
-    
-    private async void OnBackButtonClicked(object sender, EventArgs e)
-    {
-        _navigationService.OnBackButtonClickedAsync();
     }
 }
