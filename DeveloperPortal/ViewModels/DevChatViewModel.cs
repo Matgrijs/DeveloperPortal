@@ -1,5 +1,4 @@
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Text;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -13,18 +12,17 @@ namespace DeveloperPortal.ViewModels
 {
     public partial class DevChatViewModel : BaseViewModel
     {
-        private readonly ApiService _apiService;
         private HubConnection? _hubConnection;
-        private static readonly HttpClient HttpClient = new();
+        private readonly BaseHttpClientService _baseHttpClientService;
         private readonly IAudioManager _audioManager;
 
         public ObservableCollection<ChatMessage> Messages { get; } = new();
 
-        public DevChatViewModel(ApiService apiService)
+        public DevChatViewModel(BaseHttpClientService baseHttpClientService)
         {
             Title = "Dev Chat";
-            _apiService = apiService;
             _audioManager = AudioManager.Current;
+            _baseHttpClientService = baseHttpClientService;
             InitializeSignalR();
             SendMessageCommand = new AsyncRelayCommand(OnSendMessageAsync);
             IconClickedCommand = new RelayCommand<string>(OnIconClicked);
@@ -41,7 +39,7 @@ namespace DeveloperPortal.ViewModels
         private async void InitializeSignalR()
         {
             _hubConnection = new HubConnectionBuilder()
-                .WithUrl($"{_apiService.BaseUrl}/chatHub")
+                .WithUrl($"{_baseHttpClientService.Client.BaseAddress}/chatHub")
                 .WithAutomaticReconnect()
                 .Build();
 
@@ -77,8 +75,8 @@ namespace DeveloperPortal.ViewModels
         {
             try
             {
-                string url = $"{_apiService.BaseUrl}/api/Chat";
-                var response = await HttpClient.GetAsync(url);
+                string url = $"{_baseHttpClientService.Client.BaseAddress}/api/Chat";
+                var response = await _baseHttpClientService.Client.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
                     var json = await response.Content.ReadAsStringAsync();
@@ -119,7 +117,7 @@ namespace DeveloperPortal.ViewModels
 
             try
             {
-                var response = await HttpClient.PostAsync($"{_apiService.BaseUrl}/api/Chat", content);
+                var response = await _baseHttpClientService.Client.PostAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Chat", content);
                 if (response.IsSuccessStatusCode)
                 {
                     MessageEntryText = string.Empty;

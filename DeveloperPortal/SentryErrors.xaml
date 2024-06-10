@@ -15,9 +15,21 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="sentryErrors:SentryError">
                         <Frame Padding="10" Margin="10" CornerRadius="8" BackgroundColor="White" HasShadow="True">
-                            <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto">
-                                <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Text="{Binding Title}" FontAttributes="Bold" FontSize="Small" />
-                                <Button Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
+                            <Grid ColumnDefinitions="*, Auto" RowDefinitions="*, *" HeightRequest="200">
+                                <Label 
+                                    Grid.Column="0" 
+                                    Grid.Row="0" 
+                                    Text="{Binding Title}" 
+                                    FontAttributes="Bold"
+                                    LineBreakMode="WordWrap" />
+                                <Label 
+                                    Grid.Column="0" 
+                                    Grid.Row="1" 
+                                    Text="{Binding Culprit}"/>
+                                <Button 
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
                                     Text="Create Issue"
                                     HorizontalOptions="End"
                                     VerticalOptions="Center"

@@ -1,6 +1,5 @@
 ﻿using DeveloperPortal.Services;
 using DeveloperPortal.ViewModels;
-using Microsoft.Maui.Controls;
 
 namespace DeveloperPortal;
 
@@ -8,11 +7,11 @@ public partial class DevChat
 {
     private readonly DevChatViewModel _viewModel;
 
-    public DevChat(ApiService apiService)
+    public DevChat(BaseHttpClientService baseHttpClientService)
     {
         InitializeComponent();
 
-        _viewModel = new DevChatViewModel(apiService);
+        _viewModel = new DevChatViewModel(baseHttpClientService);
         BindingContext = _viewModel;
         _viewModel.ScrollToLastMessageRequested += ScrollToLastMessage;
         _viewModel.AnimateEmojiListRequested += AnimateEmojiList;

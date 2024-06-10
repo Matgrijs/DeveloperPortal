@@ -13,11 +13,11 @@ public class NavigationService : INavigationService
     {
         Page? page = destination switch
         {
-            "Planning poker" => new DevPlanningPoker(_serviceProvider.GetRequiredService<UserService>()),
-            "Notes" => new DevNotes(_serviceProvider.GetRequiredService<ApiService>()),
+            "Planning poker" => new DevPlanningPoker(_serviceProvider.GetRequiredService<UserService>(), _serviceProvider.GetRequiredService<BaseHttpClientService>()),
+            "Notes" => new DevNotes(_serviceProvider.GetRequiredService<BaseHttpClientService>()),
             "Sentry Errors" => new SentryErrors(_serviceProvider.GetRequiredService<SentryService>(), _serviceProvider.GetRequiredService<JiraService>()),
             "Jira Issues" => new JiraIssues(_serviceProvider.GetRequiredService<JiraService>()),
-            "Chat" => new DevChat(_serviceProvider.GetRequiredService<ApiService>()),
+            "Chat" => new DevChat(_serviceProvider.GetRequiredService<BaseHttpClientService>()),
             "Profile" => new DevProfile(),
             _ => null
         };

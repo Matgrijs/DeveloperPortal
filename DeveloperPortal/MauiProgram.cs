@@ -3,8 +3,6 @@ using Auth0.OidcClient;
 using DeveloperPortal.Services;
 using DeveloperPortal.Services.Navigation;
 using DeveloperPortal.ViewModels;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui.Hosting;
 
 namespace DeveloperPortal;
 
@@ -40,9 +38,10 @@ public static class MauiProgram
         // Register services
         builder.Services.AddSingleton<JiraService>();
         builder.Services.AddSingleton<Auth0ManagementService>();
-        builder.Services.AddSingleton<ApiService>();
         builder.Services.AddSingleton<UserService>();
         builder.Services.AddSingleton<SentryService>();
+        builder.Services.AddSingleton<BaseHttpClientService>();
+        builder.Services.AddSingleton<IHandlerService, HandlerService>();
 
         // Register view models
         builder.Services.AddTransient<JiraIssueViewModel>();

@@ -12,12 +12,11 @@ namespace DeveloperPortal.ViewModels
 {
     public class DevNotesViewModel : ObservableObject
     {
-        private readonly ApiService _apiService;
-        private static readonly HttpClient HttpClient = new ();
+        private readonly BaseHttpClientService _baseHttpClientService;
 
-        public DevNotesViewModel(ApiService apiService)
+        public DevNotesViewModel(BaseHttpClientService baseHttpClientService)
         {
-            _apiService = apiService;
+            _baseHttpClientService = baseHttpClientService;
             Notes = new ObservableCollection<Note>();
             SaveNoteCommand = new AsyncRelayCommand(CreateOrUpdateNoteAsync);
             DeleteNoteCommand = new AsyncRelayCommand<Note>(OnDeleteNoteAsync);
@@ -52,8 +51,8 @@ namespace DeveloperPortal.ViewModels
         {
             try
             {
-                var url = $"{_apiService.BaseUrl}/api/Note";
-                var response = await HttpClient.GetAsync(url);
+                var url = $"{_baseHttpClientService.Client.BaseAddress}/api/Note";
+                var response = await _baseHttpClientService.Client.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
                     var json = await response.Content.ReadAsStringAsync();
@@ -102,7 +101,7 @@ namespace DeveloperPortal.ViewModels
 
                 try
                 {
-                    var response = await HttpClient.PostAsync($"{_apiService.BaseUrl}/api/Note", content);
+                    var response = await _baseHttpClientService.Client.PostAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Note", content);
                     if (response.IsSuccessStatusCode)
                     {
                         NoteContent = string.Empty;
@@ -131,7 +130,7 @@ namespace DeveloperPortal.ViewModels
 
             try
             {
-                var response = await HttpClient.PutAsync($"{_apiService.BaseUrl}/api/Note/{note.Id}", content);
+                var response = await _baseHttpClientService.Client.PutAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Note/{note.Id}", content);
                 if (response.IsSuccessStatusCode)
                 {
                     NoteContent = string.Empty;
@@ -150,7 +149,7 @@ namespace DeveloperPortal.ViewModels
 
             try
             {
-                var response = await HttpClient.DeleteAsync($"{_apiService.BaseUrl}/api/Note/{note.Id}");
+                var response = await _baseHttpClientService.Client.DeleteAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Note/{note.Id}");
                 if (response.IsSuccessStatusCode)
                 {
                     Notes.Remove(note);

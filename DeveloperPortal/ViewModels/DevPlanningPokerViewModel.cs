@@ -14,14 +14,14 @@ namespace DeveloperPortal.ViewModels
     {
         private readonly UserService _userService;
         private HubConnection? _hubConnection;
-        private static readonly ApiService ApiService = new ();
-        private static readonly HttpClient HttpClient = new ();
+        private readonly BaseHttpClientService _baseHttpClientService;
 
         public ObservableCollection<User> Users { get; } = new();
 
-        public DevPlanningPokerViewModel(UserService userService)
+        public DevPlanningPokerViewModel(UserService userService, BaseHttpClientService baseHttpClientService)
         {
             _userService = userService;
+            _baseHttpClientService = baseHttpClientService;
             InitializeSignalR();
             ButtonClickedCommand = new AsyncRelayCommand<string>(OnButtonClickedAsync);
         }
@@ -34,7 +34,7 @@ namespace DeveloperPortal.ViewModels
         private async void InitializeSignalR()
         {
             _hubConnection = new HubConnectionBuilder()
-                .WithUrl($"{ApiService.BaseUrl}/planningPokerHub")
+                .WithUrl($"{_baseHttpClientService.Client.BaseAddress}/planningPokerHub")
                 .WithAutomaticReconnect()
                 .Build();
 
@@ -122,7 +122,7 @@ namespace DeveloperPortal.ViewModels
 
         private async Task<PokerVote> GetExistingVote(string username)
         {
-            var response = await HttpClient.GetAsync($"{ApiService.BaseUrl}/api/Poker");
+            var response = await _baseHttpClientService.Client.GetAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Poker");
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
@@ -137,7 +137,7 @@ namespace DeveloperPortal.ViewModels
             var json = JsonSerializer.Serialize(pokerVote);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await HttpClient.PostAsync($"{ApiService.BaseUrl}/api/Poker", content);
+            var response = await _baseHttpClientService.Client.PostAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Poker", content);
             response.EnsureSuccessStatusCode();
         }
 
@@ -146,7 +146,7 @@ namespace DeveloperPortal.ViewModels
             var json = JsonSerializer.Serialize(pokerVote);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await HttpClient.PutAsync($"{ApiService.BaseUrl}/api/Poker/{pokerVote.Id}", content);
+            var response = await _baseHttpClientService.Client.PutAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Poker/{pokerVote.Id}", content);
             response.EnsureSuccessStatusCode();
         }
 

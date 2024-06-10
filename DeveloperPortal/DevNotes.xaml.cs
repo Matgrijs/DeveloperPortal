@@ -5,10 +5,10 @@ namespace DeveloperPortal;
 
 public partial class DevNotes : ContentPage
 {
-    public DevNotes(ApiService apiService)
+    public DevNotes(BaseHttpClientService baseHttpClientService)
     {
         InitializeComponent();
-        BindingContext = new DevNotesViewModel(apiService);
+        BindingContext = new DevNotesViewModel(baseHttpClientService);
 
         Appearing += async (_, _) => await ((DevNotesViewModel)BindingContext).LoadNotesAsync();
     }

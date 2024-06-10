@@ -360,3 +360,6 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-io
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\ref\DeveloperPortal.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Plugin.Maui.Audio.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Xamarin.Essentials.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_79B279582EF0A0A6EB31D2E5AD8B969C1FEC76B7CCF9E40F0690C9CD2A66A7D0.png
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_79B279582EF0A0A6EB31D2E5AD8B969C1FEC76B7CCF9E40F0690C9CD2A66A7D0@2x.png
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_79B279582EF0A0A6EB31D2E5AD8B969C1FEC76B7CCF9E40F0690C9CD2A66A7D0@3x.png
