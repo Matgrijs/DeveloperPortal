@@ -1,14 +1,14 @@
-﻿using DeveloperPortal.Services;
+﻿using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
 
-public partial class DevNotes : ContentPage
+public partial class DevNotes
 {
-    public DevNotes(BaseHttpClientService baseHttpClientService)
+    public DevNotes(IDevHttpsConnectionHelper httpsHelper)
     {
         InitializeComponent();
-        BindingContext = new DevNotesViewModel(baseHttpClientService);
+        BindingContext = new DevNotesViewModel(httpsHelper);
 
         Appearing += async (_, _) => await ((DevNotesViewModel)BindingContext).LoadNotesAsync();
     }

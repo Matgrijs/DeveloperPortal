@@ -1,3 +1,5 @@
+using DeveloperPortal.Services.DevHttpsConnectionHelper;
+
 namespace DeveloperPortal.Services.Navigation;
 
 public class NavigationService : INavigationService
@@ -13,11 +15,11 @@ public class NavigationService : INavigationService
     {
         Page? page = destination switch
         {
-            "Planning poker" => new DevPlanningPoker(_serviceProvider.GetRequiredService<UserService>(), _serviceProvider.GetRequiredService<BaseHttpClientService>()),
-            "Notes" => new DevNotes(_serviceProvider.GetRequiredService<BaseHttpClientService>()),
+            "Planning poker" => new DevPlanningPoker(_serviceProvider.GetRequiredService<UserService>(), _serviceProvider.GetRequiredService<IDevHttpsConnectionHelper>()),
+            "Notes" => new DevNotes(_serviceProvider.GetRequiredService<IDevHttpsConnectionHelper>()),
             "Sentry Errors" => new SentryErrors(_serviceProvider.GetRequiredService<SentryService>(), _serviceProvider.GetRequiredService<JiraService>()),
             "Jira Issues" => new JiraIssues(_serviceProvider.GetRequiredService<JiraService>()),
-            "Chat" => new DevChat(_serviceProvider.GetRequiredService<BaseHttpClientService>()),
+            "Chat" => new DevChat(_serviceProvider.GetRequiredService<IDevHttpsConnectionHelper>()),
             "Profile" => new DevProfile(),
             _ => null
         };

@@ -1,4 +1,5 @@
 ﻿using DeveloperPortal.Services;
+using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
@@ -7,11 +8,11 @@ public partial class DevChat
 {
     private readonly DevChatViewModel _viewModel;
 
-    public DevChat(BaseHttpClientService baseHttpClientService)
+    public DevChat(IDevHttpsConnectionHelper httpsHelper)
     {
         InitializeComponent();
 
-        _viewModel = new DevChatViewModel(baseHttpClientService);
+        _viewModel = new DevChatViewModel(httpsHelper);
         BindingContext = _viewModel;
         _viewModel.ScrollToLastMessageRequested += ScrollToLastMessage;
         _viewModel.AnimateEmojiListRequested += AnimateEmojiList;

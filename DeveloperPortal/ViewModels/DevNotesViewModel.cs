@@ -6,17 +6,18 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DeveloperPortal.Models.Notes;
 using DeveloperPortal.Services;
+using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using Newtonsoft.Json;
 
 namespace DeveloperPortal.ViewModels
 {
     public class DevNotesViewModel : ObservableObject
     {
-        private readonly BaseHttpClientService _baseHttpClientService;
+        private readonly IDevHttpsConnectionHelper _httpsHelper;
 
-        public DevNotesViewModel(BaseHttpClientService baseHttpClientService)
+        public DevNotesViewModel(IDevHttpsConnectionHelper httpsHelper)
         {
-            _baseHttpClientService = baseHttpClientService;
+            _httpsHelper = httpsHelper;
             Notes = new ObservableCollection<Note>();
             SaveNoteCommand = new AsyncRelayCommand(CreateOrUpdateNoteAsync);
             DeleteNoteCommand = new AsyncRelayCommand<Note>(OnDeleteNoteAsync);
@@ -51,8 +52,9 @@ namespace DeveloperPortal.ViewModels
         {
             try
             {
-                var url = $"{_baseHttpClientService.Client.BaseAddress}/api/Note";
-                var response = await _baseHttpClientService.Client.GetAsync(url);
+                var httpClient = _httpsHelper.HttpClient;
+                var url = $"{_httpsHelper.DevServerRootUrl}/api/Note";
+                var response = await httpClient.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
                     var json = await response.Content.ReadAsStringAsync();
@@ -101,7 +103,8 @@ namespace DeveloperPortal.ViewModels
 
                 try
                 {
-                    var response = await _baseHttpClientService.Client.PostAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Note", content);
+                    var httpClient = _httpsHelper.HttpClient;
+                    var response = await httpClient.PostAsync($"{_httpsHelper.DevServerRootUrl}/api/Note", content);
                     if (response.IsSuccessStatusCode)
                     {
                         NoteContent = string.Empty;
@@ -130,7 +133,8 @@ namespace DeveloperPortal.ViewModels
 
             try
             {
-                var response = await _baseHttpClientService.Client.PutAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Note/{note.Id}", content);
+                var httpClient = _httpsHelper.HttpClient;
+                var response = await httpClient.PutAsync($"{_httpsHelper.DevServerRootUrl}/api/Note/{note.Id}", content);
                 if (response.IsSuccessStatusCode)
                 {
                     NoteContent = string.Empty;
@@ -149,7 +153,8 @@ namespace DeveloperPortal.ViewModels
 
             try
             {
-                var response = await _baseHttpClientService.Client.DeleteAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Note/{note.Id}");
+                var httpClient = _httpsHelper.HttpClient;
+                var response = await httpClient.DeleteAsync($"{_httpsHelper.DevServerRootUrl}/api/Note/{note.Id}");
                 if (response.IsSuccessStatusCode)
                 {
                     Notes.Remove(note);

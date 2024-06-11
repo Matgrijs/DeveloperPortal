@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DeveloperPortal.Models.Chats;
 using DeveloperPortal.Services;
+using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using Microsoft.AspNetCore.SignalR.Client;
 using Newtonsoft.Json;
 using Plugin.Maui.Audio;
@@ -13,16 +14,16 @@ namespace DeveloperPortal.ViewModels
     public partial class DevChatViewModel : BaseViewModel
     {
         private HubConnection? _hubConnection;
-        private readonly BaseHttpClientService _baseHttpClientService;
+        private readonly IDevHttpsConnectionHelper _httpsHelper;
         private readonly IAudioManager _audioManager;
 
         public ObservableCollection<ChatMessage> Messages { get; } = new();
 
-        public DevChatViewModel(BaseHttpClientService baseHttpClientService)
+        public DevChatViewModel(IDevHttpsConnectionHelper httpsHelper)
         {
             Title = "Dev Chat";
             _audioManager = AudioManager.Current;
-            _baseHttpClientService = baseHttpClientService;
+            _httpsHelper = httpsHelper;
             InitializeSignalR();
             SendMessageCommand = new AsyncRelayCommand(OnSendMessageAsync);
             IconClickedCommand = new RelayCommand<string>(OnIconClicked);
@@ -39,7 +40,16 @@ namespace DeveloperPortal.ViewModels
         private async void InitializeSignalR()
         {
             _hubConnection = new HubConnectionBuilder()
-                .WithUrl($"{_baseHttpClientService.Client.BaseAddress}/chatHub")
+#if ANDROID
+                .WithUrl(_httpsHelper.DevServerRootUrl + "/chatHub"
+                    , configureHttpConnection: o =>
+                    {
+                        o.HttpMessageHandlerFactory = m => _httpsHelper.GetPlatformMessageHandler();
+                    }
+                )
+#else
+    .WithUrl(_httpsHelper.DevServerRootUrl + "/chatHub")
+#endif
                 .WithAutomaticReconnect()
                 .Build();
 
@@ -75,8 +85,9 @@ namespace DeveloperPortal.ViewModels
         {
             try
             {
-                string url = $"{_baseHttpClientService.Client.BaseAddress}/api/Chat";
-                var response = await _baseHttpClientService.Client.GetAsync(url);
+                var httpClient = _httpsHelper.HttpClient;
+                string url = $"{_httpsHelper.DevServerRootUrl}/api/Chat";
+                var response = await httpClient.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
                     var json = await response.Content.ReadAsStringAsync();
@@ -117,7 +128,8 @@ namespace DeveloperPortal.ViewModels
 
             try
             {
-                var response = await _baseHttpClientService.Client.PostAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Chat", content);
+                var httpClient = _httpsHelper.HttpClient;
+                var response = await httpClient.PostAsync($"{_httpsHelper.DevServerRootUrl}/api/Chat", content);
                 if (response.IsSuccessStatusCode)
                 {
                     MessageEntryText = string.Empty;

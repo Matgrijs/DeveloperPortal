@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Auth0.OidcClient;
 using DeveloperPortal.Services;
+using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using DeveloperPortal.Services.Navigation;
 using DeveloperPortal.ViewModels;
 
@@ -40,8 +41,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<Auth0ManagementService>();
         builder.Services.AddSingleton<UserService>();
         builder.Services.AddSingleton<SentryService>();
-        builder.Services.AddSingleton<BaseHttpClientService>();
-        builder.Services.AddSingleton<IHandlerService, HandlerService>();
+        builder.Services.AddSingleton<IDevHttpsConnectionHelper, DevHttpsConnectionHelper>(provider => new DevHttpsConnectionHelper(7059));
 
         // Register view models
         builder.Services.AddTransient<JiraIssueViewModel>();

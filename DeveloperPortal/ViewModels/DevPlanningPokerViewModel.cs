@@ -1,12 +1,13 @@
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Text;
 using System.Text.Json;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DeveloperPortal.Services;
 using DeveloperPortal.Models.Users;
+using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using Microsoft.AspNetCore.SignalR.Client;
+using Debug = System.Diagnostics.Debug;
 
 namespace DeveloperPortal.ViewModels
 {
@@ -14,14 +15,14 @@ namespace DeveloperPortal.ViewModels
     {
         private readonly UserService _userService;
         private HubConnection? _hubConnection;
-        private readonly BaseHttpClientService _baseHttpClientService;
+        private readonly IDevHttpsConnectionHelper _httpsHelper;
 
         public ObservableCollection<User> Users { get; } = new();
 
-        public DevPlanningPokerViewModel(UserService userService, BaseHttpClientService baseHttpClientService)
+        public DevPlanningPokerViewModel(UserService userService, IDevHttpsConnectionHelper httpsHelper)
         {
             _userService = userService;
-            _baseHttpClientService = baseHttpClientService;
+            _httpsHelper = httpsHelper;
             InitializeSignalR();
             ButtonClickedCommand = new AsyncRelayCommand<string>(OnButtonClickedAsync);
         }
@@ -34,7 +35,16 @@ namespace DeveloperPortal.ViewModels
         private async void InitializeSignalR()
         {
             _hubConnection = new HubConnectionBuilder()
-                .WithUrl($"{_baseHttpClientService.Client.BaseAddress}/planningPokerHub")
+#if ANDROID
+                .WithUrl(_httpsHelper.DevServerRootUrl + "/chatHub"
+                    , configureHttpConnection: o =>
+                    {
+                        o.HttpMessageHandlerFactory = m => _httpsHelper.GetPlatformMessageHandler();
+                    }
+                )
+#else
+    .WithUrl(_httpsHelper.DevServerRootUrl + "/chatHub")
+#endif
                 .WithAutomaticReconnect()
                 .Build();
 
@@ -85,7 +95,6 @@ namespace DeveloperPortal.ViewModels
             if (loggedInUser != null)
             {
                 loggedInUser.SelectedValue = selectedValue;
-                RefreshUsers();
 
                 var pokerVote = new PokerVote
                 {
@@ -103,7 +112,7 @@ namespace DeveloperPortal.ViewModels
             try
             {
                 var existingVote = await GetExistingVote(pokerVote.Username);
-
+                
                 if (existingVote != null)
                 {
                     pokerVote.Id = existingVote.Id;
@@ -113,6 +122,8 @@ namespace DeveloperPortal.ViewModels
                 {
                     await CreateVoteAsync(pokerVote);
                 }
+
+                RefreshUsers();
             }
             catch (Exception ex)
             {
@@ -122,7 +133,8 @@ namespace DeveloperPortal.ViewModels
 
         private async Task<PokerVote> GetExistingVote(string username)
         {
-            var response = await _baseHttpClientService.Client.GetAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Poker");
+            var httpClient = _httpsHelper.HttpClient;
+            var response = await httpClient.GetAsync($"{_httpsHelper.DevServerRootUrl}/api/Poker");
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
@@ -137,7 +149,8 @@ namespace DeveloperPortal.ViewModels
             var json = JsonSerializer.Serialize(pokerVote);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await _baseHttpClientService.Client.PostAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Poker", content);
+            var httpClient = _httpsHelper.HttpClient;
+            var response = await httpClient.PostAsync($"{_httpsHelper.DevServerRootUrl}/api/Poker", content);
             response.EnsureSuccessStatusCode();
         }
 
@@ -146,7 +159,8 @@ namespace DeveloperPortal.ViewModels
             var json = JsonSerializer.Serialize(pokerVote);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await _baseHttpClientService.Client.PutAsync($"{_baseHttpClientService.Client.BaseAddress}/api/Poker/{pokerVote.Id}", content);
+            var httpClient = _httpsHelper.HttpClient;
+            var response = await httpClient.PutAsync($"{_httpsHelper.DevServerRootUrl}/api/Poker/{pokerVote.Id}", content);
             response.EnsureSuccessStatusCode();
         }
 
@@ -156,6 +170,7 @@ namespace DeveloperPortal.ViewModels
             Users.Clear();
             foreach (var user in users)
             {
+                Debug.WriteLine(user.SelectedValue);
                 Users.Add(user);
             }
         }
