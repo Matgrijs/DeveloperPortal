@@ -12,6 +12,7 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-wi
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Auth0.OidcClient.Core.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Auth0.OidcClient.MAUI.Platforms.Windows.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Auth0.OidcClient.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Castle.Core.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Mvvm.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\IdentityModel.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\IdentityModel.OidcClient.dll
@@ -69,12 +70,17 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-wi
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.System.Projection.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.Widgets.Projection.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Moq.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Plugin.Maui.Audio.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Sentry.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Sentry.Extensions.Logging.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Sentry.Maui.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\System.Diagnostics.EventLog.Messages.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\System.Diagnostics.EventLog.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\System.IO.Pipelines.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Xamarin.Essentials.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ar\Microsoft.Maui.Controls.resources.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ca\Microsoft.Maui.Controls.resources.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\cs\Microsoft.Maui.Controls.resources.dll
@@ -181,8 +187,8 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-wi
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\save_mobile.scale-100.png
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo_avans.scale-100.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\user.scale-100.png
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo_avans.scale-100.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauiimage.stamp
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Sentry.Attributes.cs
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\DeveloperPortal.AssemblyInfoInputs.cache
@@ -212,5 +218,9 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-wi
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Plugin.Maui.Audio.dll
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Xamarin.Essentials.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\DeveloperPortal.Resources.AppResources.resources
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\DeveloperPortal.Resources.AppResources.nl-NL.resources
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\DeveloperPortal.csproj.GenerateResource.cache
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\nl-NL\DeveloperPortal.resources.dll
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\nl-NL\DeveloperPortal.resources.cs
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\nl-NL\DeveloperPortal.resources.dll

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZRqSbDFgYDSL40tc7zPMMef4b+0zyKh+IWUuaF7KP5vqFKBeFUuw3i8VV+o7CikqED5m1evvVTOotEHWzH3CAQ==",
+  "dgSpecHash": "V8wCY10IYPddBpjnR3TnFw7TskRxfku9/KSsePmKKQjvrXmTOqCJ8x1vheEhb8bBNq200AEdshxhBAPUZ6lcfQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mtmei\\RiderProjects\\DeveloperPortal\\DeveloperPortal\\DeveloperPortal.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\mtmei\\.nuget\\packages\\auth0.managementapi\\7.26.2\\auth0.managementapi.7.26.2.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\auth0.oidcclient.core\\3.4.1\\auth0.oidcclient.core.3.4.1.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\auth0.oidcclient.maui\\1.0.0\\auth0.oidcclient.maui.1.0.0.nupkg.sha512",
+    "C:\\Users\\mtmei\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\identitymodel\\5.2.0\\identitymodel.5.2.0.nupkg.sha512",
@@ -64,6 +65,7 @@
     "C:\\Users\\mtmei\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240311000\\microsoft.windowsappsdk.1.5.240311000.nupkg.sha512",
+    "C:\\Users\\mtmei\\.nuget\\packages\\moq\\4.20.70\\moq.4.20.70.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\plugin.maui.audio\\2.0.0\\plugin.maui.audio.2.0.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",
@@ -119,6 +121,7 @@
     "C:\\Users\\mtmei\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
+    "C:\\Users\\mtmei\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.globalization.calendars\\4.3.0\\system.globalization.calendars.4.3.0.nupkg.sha512",

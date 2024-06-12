@@ -35,11 +35,12 @@ public class NoteController(ApplicationDbContext context, NoteService noteServic
             return BadRequest("Note ID mismatch");
         }
 
-        var existingNote = await context.Notes.FindAsync(id);
+        var existingNote = await context.Notes.AsNoTracking().FirstOrDefaultAsync(n => n.Id == id);
         if (existingNote == null)
         {
             return NotFound();
         }
+
 
         await noteService.UpdateNote(note);
         return NoContent();

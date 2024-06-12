@@ -29,7 +29,7 @@
                             HeightRequest="185"
                             Aspect="AspectFit"
                             SemanticProperties.Description="User" />
-                        <Label Text="{Binding SelectedValue}" 
+                        <Label Text="{Binding Vote.Vote}" 
                                FontSize="24" 
                                HorizontalOptions="Center"
                                VerticalOptions="Center"

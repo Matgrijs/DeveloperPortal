@@ -1,10 +1,13 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Globalization;
+using System.Resources;
 using System.Text;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DeveloperPortal.Models.Notes;
+using DeveloperPortal.Resources;
 using DeveloperPortal.Services;
 using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using Newtonsoft.Json;
@@ -14,6 +17,12 @@ namespace DeveloperPortal.ViewModels
     public class DevNotesViewModel : ObservableObject
     {
         private readonly IDevHttpsConnectionHelper _httpsHelper;
+        private readonly ResourceManager _resourceManager = new(typeof(AppResources));
+        
+        public string? TitleLabel => _resourceManager.GetString("NotesTitle", CultureInfo.CurrentCulture);
+        public string? SaveLabel => _resourceManager.GetString("Save", CultureInfo.CurrentCulture);
+        public string? PlaceHolderLabel => _resourceManager.GetString("AddDescription", CultureInfo.CurrentCulture);
+        public string? DeleteLabel => _resourceManager.GetString("Delete", CultureInfo.CurrentCulture);
 
         public DevNotesViewModel(IDevHttpsConnectionHelper httpsHelper)
         {
@@ -122,12 +131,12 @@ namespace DeveloperPortal.ViewModels
         {
             if (string.IsNullOrWhiteSpace(NoteContent))
             {
-                Console.WriteLine($"No note is selected or content is empty {NoteContent.Length}");
+                Debug.WriteLine($"No note is selected or content is empty {NoteContent.Length}");
                 return;
             }
 
             var updatedNote = new UpdateNoteDto(note.Id, note.Username, note.Auth0Id, NoteContent);
-            Console.WriteLine($"update object {updatedNote}");
+            Debug.WriteLine($"update object {updatedNote}");
             var json = JsonConvert.SerializeObject(updatedNote);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 

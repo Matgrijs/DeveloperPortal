@@ -1,8 +1,11 @@
 using System.Collections.ObjectModel;
+using System.Globalization;
+using System.Resources;
 using System.Text;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DeveloperPortal.Models.Chats;
+using DeveloperPortal.Resources;
 using DeveloperPortal.Services;
 using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using Microsoft.AspNetCore.SignalR.Client;
@@ -16,12 +19,16 @@ namespace DeveloperPortal.ViewModels
         private HubConnection? _hubConnection;
         private readonly IDevHttpsConnectionHelper _httpsHelper;
         private readonly IAudioManager _audioManager;
-
+        private readonly ResourceManager _resourceManager = new(typeof(AppResources));
+        
+        public string? TitleLabel => _resourceManager.GetString("ChatTitle", CultureInfo.CurrentCulture);
+        public string? PlaceHolderLabel => _resourceManager.GetString("AddMessage", CultureInfo.CurrentCulture);
+        public string? SendLabel => _resourceManager.GetString("Send", CultureInfo.CurrentCulture);
+        
         public ObservableCollection<ChatMessage> Messages { get; } = new();
 
         public DevChatViewModel(IDevHttpsConnectionHelper httpsHelper)
         {
-            Title = "Dev Chat";
             _audioManager = AudioManager.Current;
             _httpsHelper = httpsHelper;
             InitializeSignalR();

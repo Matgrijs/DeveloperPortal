@@ -4,25 +4,14 @@
              xmlns:viewmodel="clr-namespace:DeveloperPortal.ViewModels"
              x:Class="DeveloperPortal.DevProfile"
              x:DataType="viewmodel:DevProfileViewModel"
-             Title="Profile">
+             Title="{Binding TitleLabel}">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Button 
-                Text="Avans Theme"
-                HeightRequest="250"
-                WidthRequest="250"
-                BackgroundColor="#c6002a"
-                Command="{Binding AvansThemeCommand}" />
-            <Button 
-                Text="Rounded Theme"
-                HeightRequest="250"
-                WidthRequest="250"
-                BackgroundColor="#c6002a"
-                Command="{Binding RoundedThemeCommand}" />
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Label Text="{Binding AdjustLanguageLabel}"
+                   FontAttributes="Bold" />
+            <Switch IsToggled="{Binding IsDutchEnabled}"
+                    Toggled="Switch_Toggled" />
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

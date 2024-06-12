@@ -40,7 +40,7 @@ public class PokerController(ApplicationDbContext context, PokerService pokerSer
             return BadRequest("Poker value ID mismatch");
         }
 
-        var existingVote = await context.PokerVotes.FindAsync(id);
+        var existingVote = await context.PokerVotes.AsNoTracking().FirstOrDefaultAsync(n => n.Id == id);
         if (existingVote == null)
         {
             return NotFound();

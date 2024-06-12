@@ -6,7 +6,7 @@
              x:Class="DeveloperPortal.DevChat"
              Appearing="OnPageAppearing"
              x:DataType="viewmodel:DevChatViewModel"
-             Title="{Binding Title}">
+             Title="{Binding TitleLabel}">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -53,7 +53,7 @@
             </Grid.ColumnDefinitions>
             
             <Entry 
-               Placeholder="Type your message here..." 
+               Placeholder="{Binding PlaceHolderLabel}" 
                VerticalOptions="Center"
                Grid.Column="0"
                HorizontalOptions="FillAndExpand"
@@ -77,9 +77,8 @@
                 IsVisible="{OnIdiom Phone=true, Default=false}"/>
             
             <Button
-                Text="Send" 
+                Text="{Binding SendLabel}" 
                 Command="{Binding SendMessageCommand}"
-                WidthRequest="60"
                 BackgroundColor="#c6002a"
                 VerticalOptions="Center"
                 Grid.Column="2"

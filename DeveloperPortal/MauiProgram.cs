@@ -12,6 +12,11 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
+        
+        // Set default culture before configuration starts
+        System.Globalization.CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo("en-US");
+        System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo("en-US");
+        
         builder
             .UseMauiApp<App>()
             .UseSentry(options => {
@@ -44,10 +49,13 @@ public static class MauiProgram
         builder.Services.AddSingleton<IDevHttpsConnectionHelper, DevHttpsConnectionHelper>(provider => new DevHttpsConnectionHelper(7059));
 
         // Register view models
+        builder.Services.AddTransient<DashboardViewModel>();
+        builder.Services.AddTransient<DevChatViewModel>();
+        builder.Services.AddTransient<DevNotesViewModel>();
+        builder.Services.AddTransient<DevPlanningPokerViewModel>();
+        builder.Services.AddTransient<DevProfileViewModel>();
         builder.Services.AddTransient<JiraIssueViewModel>();
         builder.Services.AddTransient<SentryErrorViewModel>();
-        builder.Services.AddTransient<DevChatViewModel>();
-        builder.Services.AddTransient<DashboardViewModel>();
 
         // Register pages
         builder.Services.AddTransient<MainPage>();

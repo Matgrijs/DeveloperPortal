@@ -8,13 +8,11 @@ namespace DeveloperPortal.Services
     public class UserService
     {
         private readonly Auth0ManagementService _auth0ManagementServiceService;
-        private readonly ILogger<UserService> _logger;
         private readonly string _domain = "developerportal.eu.auth0.com";
 
-        public UserService(Auth0ManagementService auth0ManagementServiceService, ILogger<UserService> logger)
+        public UserService(Auth0ManagementService auth0ManagementServiceService)
         {
             _auth0ManagementServiceService = auth0ManagementServiceService;
-            _logger = logger;
         }
 
         public async Task<IList<User>> GetUsersAsync()
@@ -32,6 +30,7 @@ namespace DeveloperPortal.Services
                 return users.Select(u => new User()
                 {
                     Name = u.FullName,
+                    Auth0Id = u.UserId
                 }).ToList();
             }
             catch (Exception ex)

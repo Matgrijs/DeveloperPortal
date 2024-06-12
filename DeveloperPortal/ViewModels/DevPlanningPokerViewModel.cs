@@ -1,13 +1,14 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Text;
 using System.Text.Json;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using DeveloperPortal.Models.Poker;
 using DeveloperPortal.Services;
 using DeveloperPortal.Models.Users;
 using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using Microsoft.AspNetCore.SignalR.Client;
-using Debug = System.Diagnostics.Debug;
 
 namespace DeveloperPortal.ViewModels
 {
@@ -16,6 +17,7 @@ namespace DeveloperPortal.ViewModels
         private readonly UserService _userService;
         private HubConnection? _hubConnection;
         private readonly IDevHttpsConnectionHelper _httpsHelper;
+        
 
         public ObservableCollection<User> Users { get; } = new();
 
@@ -52,17 +54,14 @@ namespace DeveloperPortal.ViewModels
             {
                 await _hubConnection.StartAsync();
 
-                _hubConnection.On<PokerVote>("ReceiveVote", (vote) =>
+                _hubConnection.On<PokerVote>("ReceiveVote", (_) =>
                 {
-                    MainThread.BeginInvokeOnMainThread(() =>
+                    async void Action()
                     {
-                        var user = Users.FirstOrDefault(u => u.Name == vote.Username);
-                        if (user != null)
-                        {
-                            user.SelectedValue = vote.Vote;
-                            RefreshUsers();
-                        }
-                    });
+                        await LoadUsersAsync();
+                    }
+
+                    MainThread.BeginInvokeOnMainThread(Action);
                 });
             }
             catch (Exception ex)
@@ -79,6 +78,12 @@ namespace DeveloperPortal.ViewModels
                 Users.Clear();
                 foreach (var user in users)
                 {
+                    var vote = await GetExistingVote(user.Auth0Id);
+                    if (vote != null)
+                    {
+                        user.Name = vote.Username;
+                        user.Vote = vote;
+                    }
                     Users.Add(user);
                 }
             }
@@ -90,12 +95,8 @@ namespace DeveloperPortal.ViewModels
 
         private async Task OnButtonClickedAsync(string? selectedValue)
         {
-            var loggedInUser = Users.FirstOrDefault(u => u.Name == AuthenticationService.Instance.UserName);
-
-            if (loggedInUser != null)
+            if (selectedValue != null)
             {
-                loggedInUser.SelectedValue = selectedValue;
-
                 var pokerVote = new PokerVote
                 {
                     Username = AuthenticationService.Instance.UserName,
@@ -111,7 +112,7 @@ namespace DeveloperPortal.ViewModels
         {
             try
             {
-                var existingVote = await GetExistingVote(pokerVote.Username);
+                var existingVote = await GetExistingVote(pokerVote.auth0Id);
                 
                 if (existingVote != null)
                 {
@@ -122,8 +123,6 @@ namespace DeveloperPortal.ViewModels
                 {
                     await CreateVoteAsync(pokerVote);
                 }
-
-                RefreshUsers();
             }
             catch (Exception ex)
             {
@@ -131,15 +130,21 @@ namespace DeveloperPortal.ViewModels
             }
         }
 
-        private async Task<PokerVote> GetExistingVote(string username)
+        private async Task<PokerVote?> GetExistingVote(string auth0Id)
         {
             var httpClient = _httpsHelper.HttpClient;
             var response = await httpClient.GetAsync($"{_httpsHelper.DevServerRootUrl}/api/Poker");
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                var pokerVotes = JsonSerializer.Deserialize<List<PokerVote>>(json);
-                return pokerVotes?.FirstOrDefault(v => v.Username == username);
+                if (json.Length > 0)
+                {
+                    Debug.WriteLine($"json length:{json.Length}");
+                    Debug.WriteLine($"json:{json}");
+                    var pokerVotes = JsonSerializer.Deserialize<List<PokerVote>>(json);
+                    Debug.WriteLine($"pokerVotes{pokerVotes}");
+                    return pokerVotes?.FirstOrDefault(v => v.auth0Id == auth0Id);
+                }
             }
             return null;
         }
@@ -163,24 +168,7 @@ namespace DeveloperPortal.ViewModels
             var response = await httpClient.PutAsync($"{_httpsHelper.DevServerRootUrl}/api/Poker/{pokerVote.Id}", content);
             response.EnsureSuccessStatusCode();
         }
-
-        private void RefreshUsers()
-        {
-            var users = Users.ToList();
-            Users.Clear();
-            foreach (var user in users)
-            {
-                Debug.WriteLine(user.SelectedValue);
-                Users.Add(user);
-            }
-        }
     }
 
-    public class PokerVote
-    {
-        public Guid Id { get; set; }
-        public string Username { get; set; }
-        public string auth0Id { get; set; }
-        public string Vote { get; set; }
-    }
+
 }

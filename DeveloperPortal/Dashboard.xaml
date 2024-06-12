@@ -4,7 +4,7 @@
              xmlns:viewmodel="clr-namespace:DeveloperPortal.ViewModels"
              x:Class="DeveloperPortal.Dashboard"
              x:DataType="viewmodel:DashboardViewModel"
-             Title="{Binding Title}">
+             Title="Dashboard">
 
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
@@ -28,7 +28,7 @@
                         BackgroundColor="#c6002a"
                         Command="{Binding NavigateCommand}"
                         CommandParameter="Jira Issues" />
-                <Button Text="Chat"
+                <Button Text="{Binding ChatLabel}"
                         Grid.Row="{OnIdiom Phone=2, Tablet=1, Desktop=0}"
                         Grid.Column="{OnIdiom Phone=0, Tablet=0, Desktop=2}"
                         HeightRequest="250"
@@ -44,7 +44,7 @@
                         BackgroundColor="#c6002a"
                         Command="{Binding NavigateCommand}"
                         CommandParameter="Planning poker" />
-                <Button Text="Notes"
+                <Button Text="{Binding NotesLabel}"
                         Grid.Row="{OnIdiom Phone=4, Tablet=2, Desktop=1}"
                         Grid.Column="{OnIdiom Phone=0, Tablet=0, Desktop=1}"
                         HeightRequest="250"
@@ -52,7 +52,7 @@
                         BackgroundColor="#c6002a"
                         Command="{Binding NavigateCommand}"
                         CommandParameter="Notes" />
-                <Button Text="Profile"
+                <Button Text="{Binding ProfileLabel}"
                         Grid.Row="{OnIdiom Phone=5, Tablet=2, Desktop=1}"
                         Grid.Column="{OnIdiom Phone=0, Tablet=1, Desktop=2}"
                         HeightRequest="250"

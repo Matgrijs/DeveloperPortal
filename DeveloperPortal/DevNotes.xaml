@@ -5,11 +5,10 @@
              xmlns:notes="clr-namespace:DeveloperPortal.Models.Notes"
              x:Class="DeveloperPortal.DevNotes"
              x:DataType="viewmodel:DevNotesViewModel"
-             Title="Notes">
+             Title="{Binding TitleLabel}">
 
     <ContentPage.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="WidthRequest" Value="100" />
             <Setter Property="BackgroundColor" Value="#c6002a" />
         </Style>
         <Style x:Key="LabelStyle" TargetType="Label">
@@ -54,10 +53,11 @@
                             Grid.Row="2" 
                             Grid.Column="0" 
                             Spacing="20">
-                            <Button Text="Delete" 
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteNoteCommand}" 
-                                    CommandParameter="{Binding .}"
-                                    Style="{StaticResource ButtonStyle}" />
+                            <Button 
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteLabel}" 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteNoteCommand}" 
+                                CommandParameter="{Binding .}"
+                                Style="{StaticResource ButtonStyle}" />
                         </HorizontalStackLayout>
                     </Grid>
                 </DataTemplate>
@@ -72,11 +72,11 @@
             <Entry 
                 x:Name="NoteContent"
                 Grid.Column="0"
-                Placeholder="Enter your note here..." 
+                Placeholder="{Binding PlaceHolderLabel}" 
                 Text="{Binding NoteContent, Mode=TwoWay}"
                 VerticalOptions="End" />
             <Button 
-                Text="Save"
+                Text="{Binding SaveLabel}"
                 Grid.Column="1"
                 VerticalOptions="End" 
                 Style="{StaticResource ButtonStyle}" 
