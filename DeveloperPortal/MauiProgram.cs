@@ -1,9 +1,11 @@
 ﻿using System.Globalization;
-using Auth0.OidcClient;
+using DeveloperPortal.Authentication;
 using DeveloperPortal.Services;
 using DeveloperPortal.Services.DevHttpsConnectionHelper;
-using DeveloperPortal.Services.Navigation;
+using DeveloperPortal.Services.Helpers;
+using DeveloperPortal.Services.Interfaces;
 using DeveloperPortal.ViewModels;
+using IdentityModel.OidcClient;
 using Microsoft.Extensions.Logging;
 
 namespace DeveloperPortal;
@@ -34,22 +36,24 @@ public static class MauiProgram
             });
 
         // Register Auth0Client
-        var auth0Client = new Auth0Client(new Auth0ClientOptions
+        var oidcClient = new OidcClient(new()
         {
-            Domain = "developerportal.eu.auth0.com",
-            ClientId = "dlRxoxG6hpTmFR6tGnNlhh8EX9bUd96d",
-            RedirectUri = "myapp://callback/",
-            PostLogoutRedirectUri = "myapp://callback/",
-            Scope = "openid profile email"
+            Authority = $"https://{AuthenticationConstants.Auth0Domain}",
+            ClientId = AuthenticationConstants.ClientId,
+            RedirectUri = $"{AuthenticationConstants.AppProtocolName}://{AuthenticationConstants.AppCallbackUrl}/",
+            PostLogoutRedirectUri = $"{AuthenticationConstants.AppProtocolName}://{AuthenticationConstants.AppCallbackUrl}/",
+            Scope = string.Join(" ", AuthenticationConstants.Scopes),
+            Browser = new AuthWorkaroundBrowser(),
         });
-        builder.Services.AddSingleton(auth0Client);
+        ServiceLocator.AuthClient = oidcClient;
+        builder.Services.AddSingleton(oidcClient);
 
         // Register services
-        builder.Services.AddSingleton<JiraService>();
-        builder.Services.AddSingleton<Auth0ManagementService>();
-        builder.Services.AddSingleton<UserService>();
-        builder.Services.AddSingleton<SentryService>();
-        builder.Services.AddSingleton<IDevHttpsConnectionHelper, DevHttpsConnectionHelper>(provider =>
+        builder.Services.AddSingleton<IJiraService, JiraService>();
+        builder.Services.AddSingleton<IAuth0ManagementService, Auth0ManagementService>();
+        builder.Services.AddSingleton<IUserService, UserService>();
+        builder.Services.AddSingleton<ISentryService, SentryService>();
+        builder.Services.AddSingleton<IDevHttpsConnectionHelper, DevHttpsConnectionHelper>(_ =>
             new DevHttpsConnectionHelper(7059));
 
         // Register view models
@@ -76,10 +80,7 @@ public static class MauiProgram
 #endif
 
         var app = builder.Build();
-
-        // Set the service provider for use in App.xaml.cs
-        App.Services = app.Services;
-
+        
         return app;
     }
 }

@@ -1,4 +1,4 @@
-namespace DeveloperPortal.Services;
+namespace DeveloperPortal.Models;
 
 public class LanguageChangedMessage
 {

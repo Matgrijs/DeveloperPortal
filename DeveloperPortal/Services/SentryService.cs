@@ -1,9 +1,10 @@
 ﻿using System.Net.Http.Headers;
+using DeveloperPortal.Services.Interfaces;
 using Newtonsoft.Json.Linq;
 
 namespace DeveloperPortal.Services;
 
-public class SentryService
+public class SentryService: ISentryService
 {
     private readonly HttpClient _httpClient;
 

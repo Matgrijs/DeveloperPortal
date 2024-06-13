@@ -2,7 +2,7 @@
 
 public class CreateNoteDto
 {
-    public string Username { get; set; }
-    public string Auth0Id { get; set; }
-    public string Content { get; set; }
+    public required string? Username { get; set; }
+    public required string? Auth0Id { get; set; }
+    public required string Content { get; set; }
 }

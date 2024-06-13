@@ -17694,6 +17694,22 @@
           }
         }
       },
+      "WinUIEx/2.3.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.4.230822000"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.18362/WinUIEx.dll": {
+            "related": ".pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.18362/WinUIEx.dll": {
+            "related": ".pri;.xml"
+          }
+        }
+      },
       "Xamarin.Essentials/1.8.1": {
         "type": "package",
         "dependencies": {
@@ -19966,6 +19982,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "WinUIEx/2.3.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.4.230822000"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.18362/WinUIEx.dll": {
+            "related": ".pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.18362/WinUIEx.dll": {
+            "related": ".pri;.xml"
           }
         }
       },
@@ -22244,6 +22276,22 @@
           }
         }
       },
+      "WinUIEx/2.3.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.4.230822000"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.18362/WinUIEx.dll": {
+            "related": ".pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.18362/WinUIEx.dll": {
+            "related": ".pri;.xml"
+          }
+        }
+      },
       "Xamarin.Essentials/1.8.1": {
         "type": "package",
         "dependencies": {
@@ -24516,6 +24564,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "WinUIEx/2.3.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.4.230822000"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.18362/WinUIEx.dll": {
+            "related": ".pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.18362/WinUIEx.dll": {
+            "related": ".pri;.xml"
           }
         }
       },
@@ -26805,6 +26869,22 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "WinUIEx/2.3.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.4.230822000"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.18362/WinUIEx.dll": {
+            "related": ".pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.18362/WinUIEx.dll": {
+            "related": ".pri;.xml"
           }
         }
       },
@@ -33063,6 +33143,26 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "WinUIEx/2.3.4": {
+      "sha512": "wtptPKduMiTjfVhTQAcA7PHvY6NTAEkDj5zvW+4QbHg1YdUv8NFAU9CSH37OXBkBlHrsuyDIoHuF7xAMR8iqJw==",
+      "type": "package",
+      "path": "winuiex/2.3.4",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "analyzers/dotnet/cs/WinUIEx.Analyzers.dll",
+        "lib/net6.0-windows10.0.18362/WinUIEx.dll",
+        "lib/net6.0-windows10.0.18362/WinUIEx.pri",
+        "lib/net6.0-windows10.0.18362/WinUIEx.xml",
+        "logo.png",
+        "tools/install.ps1",
+        "tools/uninstall.ps1",
+        "winuiex.2.3.4.nupkg.sha512",
+        "winuiex.nuspec"
+      ]
+    },
     "Xamarin.Android.Glide/4.15.1.2": {
       "sha512": "DcekP+BXm4jFMV7zjHEltj01uiXcItq1kjGa79pj/Vx1rk3Ac2VXdmwGw06HXDP8n2XZsDh8dAoSI48G4KODRA==",
       "type": "package",
@@ -35179,6 +35279,7 @@
       "Plugin.Maui.Audio >= 2.0.0",
       "Sentry.Maui >= 4.7.0",
       "System.Net.Http >= 4.3.4",
+      "WinUIEx >= 2.3.4",
       "Xamarin.Essentials >= 1.8.1"
     ]
   },
@@ -35386,6 +35487,10 @@
           "System.Net.Http": {
             "target": "Package",
             "version": "[4.3.4, )"
+          },
+          "WinUIEx": {
+            "target": "Package",
+            "version": "[2.3.4, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",

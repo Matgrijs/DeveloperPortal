@@ -8,6 +8,7 @@ using DeveloperPortal.Models.Poker;
 using DeveloperPortal.Models.Users;
 using DeveloperPortal.Services;
 using DeveloperPortal.Services.DevHttpsConnectionHelper;
+using DeveloperPortal.Services.Interfaces;
 using Microsoft.AspNetCore.SignalR.Client;
 
 namespace DeveloperPortal.ViewModels;
@@ -15,12 +16,12 @@ namespace DeveloperPortal.ViewModels;
 public partial class DevPlanningPokerViewModel : BaseViewModel
 {
     private readonly IDevHttpsConnectionHelper _httpsHelper;
-    private readonly UserService _userService;
+    private readonly IUserService _userService;
     private HubConnection? _hubConnection;
 
     [ObservableProperty] private string? _selectedValue;
 
-    public DevPlanningPokerViewModel(UserService userService, IDevHttpsConnectionHelper httpsHelper)
+    public DevPlanningPokerViewModel(IUserService userService, IDevHttpsConnectionHelper httpsHelper)
     {
         _userService = userService;
         _httpsHelper = httpsHelper;
@@ -133,7 +134,7 @@ public partial class DevPlanningPokerViewModel : BaseViewModel
         }
     }
 
-    public async Task<PokerVote?> GetExistingVote(string auth0Id)
+    public async Task<PokerVote?> GetExistingVote(string? auth0Id)
     {
         var httpClient = _httpsHelper.HttpClient;
         var response = await httpClient.GetAsync($"{_httpsHelper.DevServerRootUrl}/api/Poker");

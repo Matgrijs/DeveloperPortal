@@ -1,4 +1,4 @@
-namespace DeveloperPortal.Services.Navigation;
+namespace DeveloperPortal.Services.Interfaces;
 
 public interface INavigationService
 {

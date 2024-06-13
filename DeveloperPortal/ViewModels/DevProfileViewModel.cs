@@ -3,6 +3,7 @@ using System.Resources;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
+using DeveloperPortal.Models;
 using DeveloperPortal.Resources;
 using DeveloperPortal.Services;
 
@@ -12,7 +13,7 @@ public partial class DevProfileViewModel : ObservableRecipient
 {
     private readonly ResourceManager _resourceManager = new(typeof(AppResources));
 
-    [ObservableProperty] private bool isDutchEnabled = CultureHelper.IsDutchEnabled;
+    [ObservableProperty] private bool _isDutchEnabled = CultureHelper.IsDutchEnabled;
 
     public DevProfileViewModel()
     {

@@ -2,16 +2,16 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.Input;
 using DeveloperPortal.Models.JiraIssues;
 using DeveloperPortal.Models.SentryErrors;
-using DeveloperPortal.Services;
+using DeveloperPortal.Services.Interfaces;
 
 namespace DeveloperPortal.ViewModels;
 
 public class SentryErrorViewModel : BaseViewModel
 {
-    private readonly JiraService _jiraService;
-    private readonly SentryService _sentryService;
+    private readonly IJiraService _jiraService;
+    private readonly ISentryService _sentryService;
 
-    public SentryErrorViewModel(SentryService sentryService, JiraService jiraService)
+    public SentryErrorViewModel(ISentryService sentryService, IJiraService jiraService)
 
     {
         _sentryService = sentryService;

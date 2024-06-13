@@ -4,5 +4,5 @@ namespace DeveloperPortal.Models.JiraIssues;
 
 public class IssueType
 {
-    [JsonProperty("name")] public string Name { get; set; }
+    [JsonProperty("name")] public required string Name { get; set; }
 }

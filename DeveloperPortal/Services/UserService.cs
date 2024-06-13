@@ -1,15 +1,16 @@
 ﻿using Auth0.ManagementApi;
 using Auth0.ManagementApi.Models;
+using DeveloperPortal.Services.Interfaces;
 using User = DeveloperPortal.Models.Users.User;
 
 namespace DeveloperPortal.Services;
 
-public class UserService
+public class UserService: IUserService
 {
-    private readonly Auth0ManagementService _auth0ManagementServiceService;
+    private readonly IAuth0ManagementService _auth0ManagementServiceService;
     private readonly string _domain = "developerportal.eu.auth0.com";
 
-    public UserService(Auth0ManagementService auth0ManagementServiceService)
+    public UserService(IAuth0ManagementService auth0ManagementServiceService)
     {
         _auth0ManagementServiceService = auth0ManagementServiceService;
     }

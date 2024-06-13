@@ -1,5 +1,4 @@
 using System.Net.Security;
-using DeveloperPortal.Services.DevHttpsConnectionHelper;
 
 namespace DeveloperPortal.Services.DevHttpsConnectionHelper;
 
@@ -13,7 +12,7 @@ public class DevHttpsConnectionHelper : IDevHttpsConnectionHelper
     {
         SslPort = sslPort;
         DevServerRootUrl = FormattableString.Invariant($"https://{DevServerName}:{SslPort}");
-        _lazyHttpClient = new Lazy<HttpClient>(() => new HttpClient(GetPlatformMessageHandler()));
+        _lazyHttpClient = new Lazy<HttpClient>(() => new HttpClient(GetPlatformMessageHandler()!));
     }
 
     public HttpClient HttpClient => _lazyHttpClient.Value;
@@ -27,7 +26,7 @@ public class DevHttpsConnectionHelper : IDevHttpsConnectionHelper
         throw new PlatformNotSupportedException("Only Windows and Android currently supported.");
 #endif
 
-    public HttpMessageHandler? GetPlatformMessageHandler()
+    public HttpMessageHandler GetPlatformMessageHandler()
     {
 #if WINDOWS
         return new HttpClientHandler();
@@ -58,8 +57,8 @@ public class DevHttpsConnectionHelper : IDevHttpsConnectionHelper
             public bool Verify(string? hostname, Javax.Net.Ssl.ISSLSession? session)
             {
                 // Allows specific host names, depending on specific conditions
-                return Javax.Net.Ssl.HttpsURLConnection.DefaultHostnameVerifier.Verify(hostname, session)
-                       || (hostname == "10.0.2.2" && session?.PeerPrincipal?.Name == "CN=localhost");
+                return Javax.Net.Ssl.HttpsURLConnection.DefaultHostnameVerifier != null && (Javax.Net.Ssl.HttpsURLConnection.DefaultHostnameVerifier.Verify(hostname, session)
+                    || (hostname == "10.0.2.2" && session?.PeerPrincipal?.Name == "CN=localhost"));
             }
         }
     }

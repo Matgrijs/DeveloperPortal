@@ -205,6 +205,10 @@
               "target": "Package",
               "version": "[4.3.4, )"
             },
+            "WinUIEx": {
+              "target": "Package",
+              "version": "[2.3.4, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.8.1, )"

@@ -4,5 +4,5 @@ namespace DeveloperPortal.Models.JiraIssues;
 
 public class JiraSearchResults
 {
-    [JsonProperty("issues")] public List<JiraIssue> Issues { get; set; }
+    [JsonProperty("issues")] public List<JiraIssue>? Issues { get; set; }
 }

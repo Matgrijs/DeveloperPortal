@@ -4,5 +4,5 @@ namespace DeveloperPortal.Models.JiraIssues;
 
 public class CreateJiraIssueDto
 {
-    [JsonProperty("fields")] public Fields Fields { get; set; }
+    [JsonProperty("fields")] public required Fields Fields { get; set; }
 }

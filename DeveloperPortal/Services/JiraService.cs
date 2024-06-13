@@ -1,11 +1,12 @@
 ﻿using System.Net.Http.Headers;
 using System.Text;
 using DeveloperPortal.Models.JiraIssues;
+using DeveloperPortal.Services.Interfaces;
 using Newtonsoft.Json;
 
 namespace DeveloperPortal.Services;
 
-public class JiraService
+public class JiraService: IJiraService
 {
     private const string JiraBaseUrl = "https://developerportalavans.atlassian.net";
     private readonly HttpClient _httpClient;

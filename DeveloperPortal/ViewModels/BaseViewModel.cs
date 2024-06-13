@@ -4,9 +4,9 @@ namespace DeveloperPortal.ViewModels;
 
 public partial class BaseViewModel : ObservableObject
 {
-    [ObservableProperty] private bool isBusy;
+    [ObservableProperty] private bool _isBusy;
 
-    [ObservableProperty] private string title;
+    [ObservableProperty] private string? _title;
 
     public bool IsNotBusy => !IsBusy;
 }

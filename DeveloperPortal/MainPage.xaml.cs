@@ -1,45 +1,27 @@
-﻿using Auth0.OidcClient;
-using DeveloperPortal.Services;
+﻿using DeveloperPortal.Services.Helpers;
+using DeveloperPortal.Services.Interfaces;
+using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
 
-public partial class MainPage
+public partial class MainPage: ContentPage, INavigationService
 {
-    private readonly Auth0Client _auth0Client;
-
-    public MainPage(Auth0Client auth0Client)
+    public MainPage()
     {
         InitializeComponent();
-        _auth0Client = auth0Client;
+        
+        var viewModel = new MainPageViewModel(ServiceLocator.AuthClient, this);
+        BindingContext = viewModel;
     }
 
-    private async void OnLoginClicked(object sender, EventArgs e)
+    public async Task NavigateToAsync(string route)
     {
-        try
+        switch (route)
         {
-            var loginResult = await _auth0Client.LoginAsync();
-
-            if (!loginResult.IsError)
-            {
-                var user = loginResult.User;
-                var accessToken = loginResult.AccessToken;
-
-                var userName = user.FindFirst(c => c.Type == "name")?.Value ?? "Username";
-                var userId = user.FindFirst(c => c.Type == "user_id")?.Value ??
-                             user.FindFirst(c => c.Type == "sub")?.Value ?? "anonymous";
-
-                AuthenticationService.Instance.Initialize(userName, userId, accessToken);
-
-                await Navigation.PushAsync(new Dashboard());
-            }
-            else
-            {
-                await DisplayAlert("Error", loginResult.ErrorDescription, "OK");
-            }
-        }
-        catch (Exception ex)
-        {
-            SentrySdk.CaptureException(ex);
+            case "Dashboard":
+                await Navigation.PushAsync(new Dashboard(this));
+                break;
         }
     }
+    
 }

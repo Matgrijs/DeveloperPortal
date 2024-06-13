@@ -31,7 +31,8 @@
     <PkgMicrosoft_NET_ILLink_Tasks Condition=" '$(PkgMicrosoft_NET_ILLink_Tasks)' == '' ">C:\Users\mtmei\.nuget\packages\microsoft.net.illink.tasks\8.0.2</PkgMicrosoft_NET_ILLink_Tasks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0-windows10.0.19041.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgSentry Condition=" '$(PkgSentry)' == '' ">C:\Users\mtmei\.nuget\packages\sentry\4.7.0</PkgSentry>
     <PkgMicrosoft_WindowsAppSDK Condition=" '$(PkgMicrosoft_WindowsAppSDK)' == '' ">C:\Users\mtmei\.nuget\packages\microsoft.windowsappsdk\1.5.240311000</PkgMicrosoft_WindowsAppSDK>
+    <PkgWinUIEx Condition=" '$(PkgWinUIEx)' == '' ">C:\Users\mtmei\.nuget\packages\winuiex\2.3.4</PkgWinUIEx>
+    <PkgSentry Condition=" '$(PkgSentry)' == '' ">C:\Users\mtmei\.nuget\packages\sentry\4.7.0</PkgSentry>
   </PropertyGroup>
 </Project>

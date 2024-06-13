@@ -1,12 +1,13 @@
+using System.Diagnostics;
 using System.Globalization;
 using System.Resources;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
+using DeveloperPortal.Models;
 using DeveloperPortal.Resources;
-using DeveloperPortal.Services;
-using DeveloperPortal.Services.Navigation;
+using DeveloperPortal.Services.Interfaces;
 
 namespace DeveloperPortal.ViewModels;
 
@@ -15,11 +16,11 @@ public partial class DashboardViewModel : ObservableRecipient
     private readonly INavigationService _navigationService;
     private readonly ResourceManager _resourceManager = new(typeof(AppResources));
 
-    [ObservableProperty] private string chatLabel;
+    [ObservableProperty] private string? _chatLabel;
 
-    [ObservableProperty] private string notesLabel;
+    [ObservableProperty] private string? _notesLabel;
 
-    [ObservableProperty] private string profileLabel;
+    [ObservableProperty] private string? _profileLabel;
 
     public DashboardViewModel(INavigationService navigationService)
     {
@@ -30,7 +31,7 @@ public partial class DashboardViewModel : ObservableRecipient
 
         // Listen for culture changes
         Messenger.Register<DashboardViewModel, LanguageChangedMessage>(this,
-            (recipient, message) => { recipient.UpdateLabels(); });
+            (recipient, _) => { recipient.UpdateLabels(); });
     }
 
     public ICommand NavigateCommand { get; }
@@ -42,8 +43,9 @@ public partial class DashboardViewModel : ObservableRecipient
         NotesLabel = _resourceManager.GetString("NotesTitle", CultureInfo.CurrentCulture);
     }
 
-    private async void OnNavigate(string? destination)
+    public async void OnNavigate(string? destination)
     {
+        Debug.WriteLine($"destination: {destination}");
         if (destination != null) await _navigationService.NavigateToAsync(destination);
     }
 }
