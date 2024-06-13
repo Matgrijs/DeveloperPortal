@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:DeveloperPortal.ViewModels"
@@ -8,10 +9,11 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
-            <Grid RowSpacing="10" ColumnSpacing="10" VerticalOptions="Center" WidthRequest="{OnIdiom Phone=270, Tablet=520, Desktop=770}"
+            <Grid RowSpacing="10" ColumnSpacing="10" VerticalOptions="Center"
+                  WidthRequest="{OnIdiom Phone=270, Tablet=520, Desktop=770}"
                   RowDefinitions="{OnIdiom Phone='Auto, Auto, Auto, Auto, Auto, Auto', Tablet='*, *', Desktop='*, *'}"
                   ColumnDefinitions="{OnIdiom Phone='Auto', Tablet='*, *', Desktop='*, *, *'}">
-                
+
                 <Button Text="Sentry Errors"
                         Grid.Row="{OnIdiom Phone=0, Tablet=0, Desktop=0}"
                         Grid.Column="{OnIdiom Phone=0, Tablet=0, Desktop=0}"

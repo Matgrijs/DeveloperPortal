@@ -1,15 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace DeveloperPortal.ViewModels
+namespace DeveloperPortal.ViewModels;
+
+public partial class BaseViewModel : ObservableObject
 {
-    public partial class BaseViewModel : ObservableObject
-    {
-        [ObservableProperty]
-        private bool isBusy;
+    [ObservableProperty] private bool isBusy;
 
-        [ObservableProperty]
-        private string title;
+    [ObservableProperty] private string title;
 
-        public bool IsNotBusy => !IsBusy;
-    }
+    public bool IsNotBusy => !IsBusy;
 }

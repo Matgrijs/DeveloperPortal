@@ -11,16 +11,16 @@ public class PokerService(IHubContext<PokerHub> hubContext, ApplicationDbContext
     {
         dbContext.PokerVotes.Add(pokerVote);
         await dbContext.SaveChangesAsync();
-        
+
         // Notify all connected clients
         await hubContext.Clients.All.SendAsync("ReceiveVote", pokerVote);
     }
-    
+
     public async Task UpdateVote(PokerVote pokerVote)
     {
         dbContext.PokerVotes.Update(pokerVote);
         await dbContext.SaveChangesAsync();
-        
+
         // Notify all connected clients
         await hubContext.Clients.All.SendAsync("ReceiveVote", pokerVote);
     }

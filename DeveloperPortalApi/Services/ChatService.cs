@@ -12,7 +12,7 @@ public class ChatService(IHubContext<ChatHub> hubContext, ApplicationDbContext d
         chatMessage.MessageTime = chatMessage.MessageTime.UtcDateTime;
         dbContext.ChatMessages.Add(chatMessage);
         await dbContext.SaveChangesAsync();
-        
+
         // Notify all connected clients
         await hubContext.Clients.All.SendAsync("ReceiveMessage", chatMessage);
     }

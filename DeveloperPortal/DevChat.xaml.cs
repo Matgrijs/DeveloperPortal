@@ -1,5 +1,4 @@
-﻿using DeveloperPortal.Services;
-using DeveloperPortal.Services.DevHttpsConnectionHelper;
+﻿using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
@@ -34,9 +33,7 @@ public partial class DevChat
     private void ScrollToLastMessage()
     {
         if (_viewModel.Messages.Count > 0)
-        {
             MessagesList.ScrollTo(_viewModel.Messages[^1], position: ScrollToPosition.End, animate: true);
-        }
     }
 
     private async void AnimateEmojiList(bool show)

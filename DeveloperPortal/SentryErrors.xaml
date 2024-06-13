@@ -8,25 +8,26 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="10">
-            <CollectionView IsVisible="{Binding IsNotBusy}" ItemsSource="{Binding Errors}" SelectionMode="None" x:Name="ErrorsListView" Margin="0,0,0,10">
+            <CollectionView IsVisible="{Binding IsNotBusy}" ItemsSource="{Binding Errors}" SelectionMode="None"
+                            x:Name="ErrorsListView" Margin="0,0,0,10">
                 <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="sentryErrors:SentryError">
                         <Frame Padding="10" Margin="10" CornerRadius="8" BackgroundColor="White" HasShadow="True">
                             <Grid ColumnDefinitions="*, Auto" RowDefinitions="*, *" HeightRequest="150">
-                                <Label 
-                                    Grid.Column="0" 
-                                    Grid.Row="0" 
-                                    Text="{Binding Title}" 
+                                <Label
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Text="{Binding Title}"
                                     FontAttributes="Bold"
                                     LineBreakMode="WordWrap" />
-                                <Label 
-                                    Grid.Column="0" 
-                                    Grid.Row="1" 
-                                    Text="{Binding Culprit}"/>
-                                <Button 
+                                <Label
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Text="{Binding Culprit}" />
+                                <Button
                                     Grid.Column="1"
                                     Grid.Row="0"
                                     Grid.RowSpan="2"
@@ -43,12 +44,12 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            
+
             <ActivityIndicator
-               IsVisible="{Binding IsBusy}"
-               IsRunning="{Binding IsBusy}"
-               HorizontalOptions="FillAndExpand"
-               VerticalOptions="CenterAndExpand" />
+                IsVisible="{Binding IsBusy}"
+                IsRunning="{Binding IsBusy}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

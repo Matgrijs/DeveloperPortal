@@ -1,18 +1,17 @@
 ﻿using DeveloperPortal.Services;
 using DeveloperPortal.ViewModels;
 
-namespace DeveloperPortal
+namespace DeveloperPortal;
+
+public partial class SentryErrors
 {
-    public partial class SentryErrors
+    public SentryErrors(SentryService sentryService, JiraService jiraService)
     {
-        public SentryErrors(SentryService sentryService, JiraService jiraService)
-        {
-            SentryErrorViewModel viewModel;
-            InitializeComponent();
+        SentryErrorViewModel viewModel;
+        InitializeComponent();
 
-            BindingContext = viewModel = new SentryErrorViewModel(sentryService, jiraService);
+        BindingContext = viewModel = new SentryErrorViewModel(sentryService, jiraService);
 
-            Appearing += async (_, _) => await viewModel.LoadErrors();
-        }
+        Appearing += async (_, _) => await viewModel.LoadErrors();
     }
 }

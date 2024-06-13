@@ -6,11 +6,11 @@ namespace DeveloperPortalApi.Data;
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
 {
     public DbSet<ChatMessage> ChatMessages { get; set; }
-    
+
     public DbSet<Note> Notes { get; set; }
-    
+
     public DbSet<PokerVote> PokerVotes { get; set; }
-    
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -19,4 +19,3 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         modelBuilder.Entity<Note>().HasData(DefaultDbData.Notes);
     }
 }
-

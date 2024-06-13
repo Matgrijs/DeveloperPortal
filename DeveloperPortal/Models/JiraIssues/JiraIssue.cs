@@ -1,6 +1,6 @@
 namespace DeveloperPortal.Models.JiraIssues;
 
-public class JiraIssue(String id, string key, Fields fields)
+public class JiraIssue(string id, string key, Fields fields)
 {
     public string Id { get; set; } = id;
     public string Key { get; set; } = key;

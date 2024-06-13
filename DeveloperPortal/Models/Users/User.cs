@@ -1,6 +1,4 @@
-﻿using DeveloperPortal.Models.Poker;
-
-namespace DeveloperPortal.Models.Users;
+﻿namespace DeveloperPortal.Models.Users;
 
 public class User
 {

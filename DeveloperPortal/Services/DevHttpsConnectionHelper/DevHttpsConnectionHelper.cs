@@ -2,6 +2,7 @@ using System.Net.Security;
 using DeveloperPortal.Services.DevHttpsConnectionHelper;
 
 namespace DeveloperPortal.Services.DevHttpsConnectionHelper;
+
 public class DevHttpsConnectionHelper : IDevHttpsConnectionHelper
 {
     private readonly Lazy<HttpClient> _lazyHttpClient;

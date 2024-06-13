@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:DeveloperPortal.ViewModels"
@@ -22,38 +23,38 @@
                         HorizontalOptions="FillAndExpand"
                         Margin="10,10"
                         BackgroundColor="White">
-                <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="users:User">
-                                <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                        <!-- Image -->
-                                        <Image Source="user.png"
-                                               HeightRequest="185"
-                                               Aspect="AspectFit"
-                                               AbsoluteLayout.LayoutBounds="0.5, 0.4, 185, 185"
-                                               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="users:User">
+                    <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <!-- Image -->
+                        <Image Source="user.png"
+                               HeightRequest="185"
+                               Aspect="AspectFit"
+                               AbsoluteLayout.LayoutBounds="0.5, 0.4, 185, 185"
+                               AbsoluteLayout.LayoutFlags="PositionProportional" />
 
-                                        <!-- Vote label -->
-                                        <Label Text="{Binding Vote}"
-                                               FontSize="24"
-                                               BackgroundColor="Transparent"
-                                               TextColor="Black"
-                                               AbsoluteLayout.LayoutBounds="0.5, 0.20, AutoSize, AutoSize"
-                                               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <!-- Vote label -->
+                        <Label Text="{Binding Vote}"
+                               FontSize="24"
+                               BackgroundColor="Transparent"
+                               TextColor="Black"
+                               AbsoluteLayout.LayoutBounds="0.5, 0.20, AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutFlags="PositionProportional" />
 
-                                        <!-- Name label -->
-                                        <Label Text="{Binding Name}"
-                                               FontSize="14"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="End"
-                                               AbsoluteLayout.LayoutBounds="0.5, 1.05, AutoSize, AutoSize"
-                                               AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                                </AbsoluteLayout>
-                        </DataTemplate>
-                </CollectionView.ItemTemplate>
+                        <!-- Name label -->
+                        <Label Text="{Binding Name}"
+                               FontSize="14"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End"
+                               AbsoluteLayout.LayoutBounds="0.5, 1.05, AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutFlags="PositionProportional" />
+                    </AbsoluteLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
         </CollectionView>
-        
+
         <!-- Buttons -->
-        <StackLayout Orientation="Horizontal" 
+        <StackLayout Orientation="Horizontal"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="End"
                      Grid.Row="2">
@@ -72,7 +73,7 @@
                     HorizontalOptions="FillAndExpand"
                     Margin="10,10" />
             <Button Text="4"
-                    FontSize="24" 
+                    FontSize="24"
                     BackgroundColor="#c6002a"
                     Command="{Binding ButtonClickedCommand}"
                     CommandParameter="4"
@@ -86,14 +87,14 @@
                     HorizontalOptions="FillAndExpand"
                     Margin="10,10" />
             <Button Text="&#9749;"
-                    FontSize="24" 
+                    FontSize="24"
                     BackgroundColor="#c6002a"
                     Command="{Binding ButtonClickedCommand}"
                     CommandParameter="&#9749;"
                     HorizontalOptions="FillAndExpand"
                     Margin="10,10" />
-            <Button Text="?" 
-                    FontSize="24" 
+            <Button Text="?"
+                    FontSize="24"
                     BackgroundColor="#c6002a"
                     Command="{Binding ButtonClickedCommand}"
                     CommandParameter="?"

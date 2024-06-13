@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "V8wCY10IYPddBpjnR3TnFw7TskRxfku9/KSsePmKKQjvrXmTOqCJ8x1vheEhb8bBNq200AEdshxhBAPUZ6lcfQ==",
+  "dgSpecHash": "ROMNwS6o+2s3BRd7u8oB28x1zHeEk4Ftab+c6RtmgCPjJ4rcANj93+xfAHfIBjAAwwT3yuqGJ3GVbxxYtV2ivA==",
   "success": true,
   "projectFilePath": "C:\\Users\\mtmei\\RiderProjects\\DeveloperPortal\\DeveloperPortal\\DeveloperPortal.csproj",
   "expectedPackageFiles": [
@@ -112,7 +112,6 @@
     "C:\\Users\\mtmei\\.nuget\\packages\\sentry\\4.7.0\\sentry.4.7.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\sentry.android.assemblyreader\\4.7.0\\sentry.android.assemblyreader.4.7.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\sentry.bindings.android\\4.7.0\\sentry.bindings.android.4.7.0.nupkg.sha512",
-    "C:\\Users\\mtmei\\.nuget\\packages\\sentry.bindings.cocoa\\4.7.0\\sentry.bindings.cocoa.4.7.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\sentry.extensions.logging\\4.7.0\\sentry.extensions.logging.4.7.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\sentry.maui\\4.7.0\\sentry.maui.4.7.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
@@ -144,7 +143,6 @@
     "C:\\Users\\mtmei\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",
-    "C:\\Users\\mtmei\\.nuget\\packages\\system.runtime.interopservices.nfloat.internal\\6.0.1\\system.runtime.interopservices.nfloat.internal.6.0.1.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.runtime.numerics\\4.3.0\\system.runtime.numerics.4.3.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0\\system.security.cryptography.algorithms.4.3.0.nupkg.sha512",
     "C:\\Users\\mtmei\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",

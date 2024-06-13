@@ -12,9 +12,6 @@ public partial class DevProfile : ContentPage
 
     private void Switch_Toggled(object sender, ToggledEventArgs e)
     {
-        if (BindingContext is DevProfileViewModel vm)
-        {
-            vm.ToggleLanguageCommand.Execute(null);
-        }
+        if (BindingContext is DevProfileViewModel vm) vm.ToggleLanguageCommand.Execute(null);
     }
 }

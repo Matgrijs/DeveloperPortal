@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DeveloperPortalApi.Controllers;
 
-
 [Route("api/[controller]")]
 [ApiController]
 public class ChatController(ApplicationDbContext context, ChatService chatService) : ControllerBase
@@ -23,9 +22,7 @@ public class ChatController(ApplicationDbContext context, ChatService chatServic
     public async Task<IActionResult> PostMessage(ChatMessage message)
     {
         if (string.IsNullOrEmpty(message.Username) || string.IsNullOrEmpty(message.Message))
-        {
             return BadRequest("Username and message are required.");
-        }
 
         await chatService.AddMessage(message);
 

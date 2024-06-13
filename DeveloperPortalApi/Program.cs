@@ -14,7 +14,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 builder.Services.AddControllers()
-    .AddJsonOptions(o => {o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;});
+    .AddJsonOptions(o => { o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles; });
 builder.Services.AddScoped<ChatService>();
 builder.Services.AddScoped<NoteService>();
 builder.Services.AddScoped<PokerService>();
@@ -31,7 +31,8 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(corsPolicyBuilder =>
     {
-        corsPolicyBuilder.WithOrigins("https://localhost:7059", "http://localhost:5186","https://10.0.2.2:7059", "http://10.0.2.2:5186")
+        corsPolicyBuilder.WithOrigins("https://localhost:7059", "http://localhost:5186", "https://10.0.2.2:7059",
+                "http://10.0.2.2:5186")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });

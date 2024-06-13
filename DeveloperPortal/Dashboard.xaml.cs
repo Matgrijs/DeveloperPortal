@@ -1,15 +1,14 @@
 ﻿using DeveloperPortal.ViewModels;
 
-namespace DeveloperPortal
+namespace DeveloperPortal;
+
+public partial class Dashboard
 {
-    public partial class Dashboard
+    public Dashboard()
     {
-        public Dashboard()
-        {
-            InitializeComponent();
-            
-            var viewModel = App.Services!.GetService<DashboardViewModel>();
-            BindingContext = viewModel ?? throw new InvalidOperationException("ViewModel not found.");
-        }
+        InitializeComponent();
+
+        var viewModel = App.Services!.GetService<DashboardViewModel>();
+        BindingContext = viewModel ?? throw new InvalidOperationException("ViewModel not found.");
     }
 }

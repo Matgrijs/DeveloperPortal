@@ -1,9 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Globalization;
 using Auth0.OidcClient;
 using DeveloperPortal.Services;
 using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using DeveloperPortal.Services.Navigation;
 using DeveloperPortal.ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace DeveloperPortal;
 
@@ -12,15 +13,17 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
-        
+
         // Set default culture before configuration starts
-        System.Globalization.CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo("en-US");
-        System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo("en-US");
-        
+        CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
+        CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US");
+
         builder
             .UseMauiApp<App>()
-            .UseSentry(options => {
-                options.Dsn = "https://7a8a2035ca3fc5642fc8bda4a76c866e@o4507341086064640.ingest.de.sentry.io/4507341088555088";
+            .UseSentry(options =>
+            {
+                options.Dsn =
+                    "https://7a8a2035ca3fc5642fc8bda4a76c866e@o4507341086064640.ingest.de.sentry.io/4507341088555088";
                 options.Debug = true;
                 options.TracesSampleRate = 1.0;
             })
@@ -31,7 +34,7 @@ public static class MauiProgram
             });
 
         // Register Auth0Client
-        var auth0Client = new Auth0Client(new()
+        var auth0Client = new Auth0Client(new Auth0ClientOptions
         {
             Domain = "developerportal.eu.auth0.com",
             ClientId = "dlRxoxG6hpTmFR6tGnNlhh8EX9bUd96d",
@@ -46,7 +49,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<Auth0ManagementService>();
         builder.Services.AddSingleton<UserService>();
         builder.Services.AddSingleton<SentryService>();
-        builder.Services.AddSingleton<IDevHttpsConnectionHelper, DevHttpsConnectionHelper>(provider => new DevHttpsConnectionHelper(7059));
+        builder.Services.AddSingleton<IDevHttpsConnectionHelper, DevHttpsConnectionHelper>(provider =>
+            new DevHttpsConnectionHelper(7059));
 
         // Register view models
         builder.Services.AddTransient<DashboardViewModel>();
@@ -72,7 +76,7 @@ public static class MauiProgram
 #endif
 
         var app = builder.Build();
-        
+
         // Set the service provider for use in App.xaml.cs
         App.Services = app.Services;
 

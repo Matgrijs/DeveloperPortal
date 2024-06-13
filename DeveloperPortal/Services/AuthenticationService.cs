@@ -2,7 +2,7 @@
 
 public class AuthenticationService
 {
-    public static AuthenticationService Instance { get; } = new ();
+    public static AuthenticationService Instance { get; } = new();
 
     public string UserName { get; private set; }
     public string Auth0Id { get; private set; }

@@ -4,8 +4,6 @@ namespace DeveloperPortal;
 
 public partial class App
 {
-    public static IServiceProvider? Services { get; set; }
-
     public App(IServiceProvider? serviceProvider)
     {
         InitializeComponent();
@@ -17,4 +15,6 @@ public partial class App
 
         MainPage = new NavigationPage(new MainPage(auth0Client));
     }
+
+    public static IServiceProvider? Services { get; set; }
 }
