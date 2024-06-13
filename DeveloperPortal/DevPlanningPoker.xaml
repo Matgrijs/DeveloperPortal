@@ -13,96 +13,92 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
+
         <!-- Users list -->
         <CollectionView ItemsSource="{Binding Users}"
-            Grid.Row="1"
-            VerticalOptions="FillAndExpand"
-            HorizontalOptions="FillAndExpand"
-            Margin="10,0"
-            BackgroundColor="White">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="users:User">
-                    <Grid HorizontalOptions="Center">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Image
-                            Source="user.png"
-                            HeightRequest="185"
-                            Aspect="AspectFit"
-                            SemanticProperties.Description="User" />
-                        <Label Text="{Binding Vote.Vote}" 
-                               FontSize="24" 
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                               Margin="0, 5, 0, 0" 
-                               TextColor="Black"
-                               BackgroundColor="#FFFFFF80"/> <!-- Semi-transparent background -->
-                        <Label Grid.Row="1" Text="{Binding Name}" 
-                               FontSize="14" 
-                               HorizontalOptions="Center"
-                               VerticalOptions="End"
-                               Margin="0, 10, 0, 0"/>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
+                        Grid.Row="1"
+                        ItemsLayout="VerticalGrid, 2"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="10,10"
+                        BackgroundColor="White">
+                <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="users:User">
+                                <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                        <!-- Image -->
+                                        <Image Source="user.png"
+                                               HeightRequest="185"
+                                               Aspect="AspectFit"
+                                               AbsoluteLayout.LayoutBounds="0.5, 0.4, 185, 185"
+                                               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                                        <!-- Vote label -->
+                                        <Label Text="{Binding Vote}"
+                                               FontSize="24"
+                                               BackgroundColor="Transparent"
+                                               TextColor="Black"
+                                               AbsoluteLayout.LayoutBounds="0.5, 0.20, AutoSize, AutoSize"
+                                               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                                        <!-- Name label -->
+                                        <Label Text="{Binding Name}"
+                                               FontSize="14"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="End"
+                                               AbsoluteLayout.LayoutBounds="0.5, 1.05, AutoSize, AutoSize"
+                                               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                                </AbsoluteLayout>
+                        </DataTemplate>
+                </CollectionView.ItemTemplate>
         </CollectionView>
         
         <!-- Buttons -->
-        <StackLayout
-            Orientation="Horizontal" 
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="End"
-            Grid.Row="2">
-            <Button 
-                Text="1"
-                FontSize="24"
-                BackgroundColor="#c6002a"
-                Command="{Binding ButtonClickedCommand}"
-                CommandParameter="1"
-                HorizontalOptions="FillAndExpand"
-                Margin="10,10" />
-            <Button
-                Text="2"
-                FontSize="24"
-                BackgroundColor="#c6002a"
-                Command="{Binding ButtonClickedCommand}"
-                CommandParameter="2"
-                HorizontalOptions="FillAndExpand"
-                Margin="10,10" />
-            <Button 
-                Text="4"
-                FontSize="24" 
-                BackgroundColor="#c6002a"
-                Command="{Binding ButtonClickedCommand}"
-                CommandParameter="4"
-                HorizontalOptions="FillAndExpand"
-                Margin="10,10" />
-            <Button
-                Text="8"
-                FontSize="24"
-                BackgroundColor="#c6002a"
-                Command="{Binding ButtonClickedCommand}"
-                CommandParameter="8"
-                HorizontalOptions="FillAndExpand"
-                Margin="10,10" />
-            <Button 
-                Text="&#9749;"
-                FontSize="24" 
-                BackgroundColor="#c6002a"
-                Command="{Binding ButtonClickedCommand}"
-                CommandParameter="&#9749;"
-                HorizontalOptions="FillAndExpand"
-                Margin="10,10" />
-            <Button 
-                Text="?" 
-                FontSize="24" 
-                BackgroundColor="#c6002a"
-                Command="{Binding ButtonClickedCommand}"
-                CommandParameter="?"
-                HorizontalOptions="FillAndExpand"
-                Margin="10,10" />
+        <StackLayout Orientation="Horizontal" 
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="End"
+                     Grid.Row="2">
+            <Button Text="1"
+                    FontSize="24"
+                    BackgroundColor="#c6002a"
+                    Command="{Binding ButtonClickedCommand}"
+                    CommandParameter="1"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,10" />
+            <Button Text="2"
+                    FontSize="24"
+                    BackgroundColor="#c6002a"
+                    Command="{Binding ButtonClickedCommand}"
+                    CommandParameter="2"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,10" />
+            <Button Text="4"
+                    FontSize="24" 
+                    BackgroundColor="#c6002a"
+                    Command="{Binding ButtonClickedCommand}"
+                    CommandParameter="4"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,10" />
+            <Button Text="8"
+                    FontSize="24"
+                    BackgroundColor="#c6002a"
+                    Command="{Binding ButtonClickedCommand}"
+                    CommandParameter="8"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,10" />
+            <Button Text="&#9749;"
+                    FontSize="24" 
+                    BackgroundColor="#c6002a"
+                    Command="{Binding ButtonClickedCommand}"
+                    CommandParameter="&#9749;"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,10" />
+            <Button Text="?" 
+                    FontSize="24" 
+                    BackgroundColor="#c6002a"
+                    Command="{Binding ButtonClickedCommand}"
+                    CommandParameter="?"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,10" />
         </StackLayout>
     </Grid>
 </ContentPage>
