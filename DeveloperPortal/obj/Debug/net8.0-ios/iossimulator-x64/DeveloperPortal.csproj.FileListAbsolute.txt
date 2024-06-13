@@ -1,6 +1,7 @@
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.runtimeconfig.json
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.pdb
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\nl-NL\DeveloperPortal.resources.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Auth0.AuthenticationApi.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Auth0.Core.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\Auth0.ManagementApi.dll
@@ -331,9 +332,9 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-io
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\user.png
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\save_mobile.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\logo_avans.png
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\save_mobile.png
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\user.png
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.stamp
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\f\MauiInfo.plist
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\mauifont.stamp
@@ -350,6 +351,9 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-io
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\_ProcessedBundleResourcesPath.items
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\_ProcessedContentPath.items
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.csproj.AssemblyReference.cache
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.Resources.AppResources.resources
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.Resources.AppResources.nl-NL.resources
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.csproj.GenerateResource.cache
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\Sentry.Attributes.cs
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.AssemblyInfoInputs.cache
@@ -357,15 +361,11 @@ C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-io
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.csproj.CoreCompileInputs.cache
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.sourcelink.json
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\XamlC.stamp
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\nl-NL\DeveloperPortal.resources.cs
+C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\nl-NL\DeveloperPortal.resources.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\Develope.DE2A9322.Up2Date
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\refint\DeveloperPortal.dll
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.pdb
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.genruntimeconfig.cache
 C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\ref\DeveloperPortal.dll
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.Resources.AppResources.resources
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.Resources.AppResources.nl-NL.resources
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\DeveloperPortal.csproj.GenerateResource.cache
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\bin\Debug\net8.0-ios\iossimulator-x64\nl-NL\DeveloperPortal.resources.dll
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\nl-NL\DeveloperPortal.resources.cs
-C:\Users\mtmei\RiderProjects\DeveloperPortal\DeveloperPortal\obj\Debug\net8.0-ios\iossimulator-x64\nl-NL\DeveloperPortal.resources.dll

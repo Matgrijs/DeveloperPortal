@@ -15,7 +15,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="sentryErrors:SentryError">
                         <Frame Padding="10" Margin="10" CornerRadius="8" BackgroundColor="White" HasShadow="True">
-                            <Grid ColumnDefinitions="*, Auto" RowDefinitions="*, *" HeightRequest="200">
+                            <Grid ColumnDefinitions="*, Auto" RowDefinitions="*, *" HeightRequest="150">
                                 <Label 
                                     Grid.Column="0" 
                                     Grid.Row="0" 

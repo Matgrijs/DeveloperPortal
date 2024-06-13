@@ -86,12 +86,10 @@ namespace DeveloperPortal.ViewModels
         {
             if (SelectedNote != null)
             {
-                Debug.WriteLine("we zijn aan het updaten");
                 await OnEditNoteAsync(SelectedNote);
             }
             else
             {
-                Debug.WriteLine("we zijn aan het aanmaken");
                 await OnCreateNoteAsync();
             }
         }
@@ -131,12 +129,10 @@ namespace DeveloperPortal.ViewModels
         {
             if (string.IsNullOrWhiteSpace(NoteContent))
             {
-                Debug.WriteLine($"No note is selected or content is empty {NoteContent.Length}");
                 return;
             }
 
             var updatedNote = new UpdateNoteDto(note.Id, note.Username, note.Auth0Id, NoteContent);
-            Debug.WriteLine($"update object {updatedNote}");
             var json = JsonConvert.SerializeObject(updatedNote);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 

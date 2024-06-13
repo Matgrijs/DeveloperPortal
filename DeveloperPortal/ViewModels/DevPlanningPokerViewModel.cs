@@ -38,14 +38,14 @@ namespace DeveloperPortal.ViewModels
         {
             _hubConnection = new HubConnectionBuilder()
 #if ANDROID
-                .WithUrl(_httpsHelper.DevServerRootUrl + "/chatHub"
+                .WithUrl(_httpsHelper.DevServerRootUrl + "/planningPokerHub"
                     , configureHttpConnection: o =>
                     {
                         o.HttpMessageHandlerFactory = m => _httpsHelper.GetPlatformMessageHandler();
                     }
                 )
 #else
-    .WithUrl(_httpsHelper.DevServerRootUrl + "/chatHub")
+    .WithUrl(_httpsHelper.DevServerRootUrl + "/planningPokerHub")
 #endif
                 .WithAutomaticReconnect()
                 .Build();
@@ -56,6 +56,7 @@ namespace DeveloperPortal.ViewModels
 
                 _hubConnection.On<PokerVote>("ReceiveVote", (_) =>
                 {
+                    Debug.WriteLine("triggered");
                     async void Action()
                     {
                         await LoadUsersAsync();
@@ -82,7 +83,8 @@ namespace DeveloperPortal.ViewModels
                     if (vote != null)
                     {
                         user.Name = vote.Username;
-                        user.Vote = vote;
+                        user.Vote = vote.Vote;
+                        Debug.WriteLine(user.Vote);
                     }
                     Users.Add(user);
                 }
@@ -139,10 +141,7 @@ namespace DeveloperPortal.ViewModels
                 var json = await response.Content.ReadAsStringAsync();
                 if (json.Length > 0)
                 {
-                    Debug.WriteLine($"json length:{json.Length}");
-                    Debug.WriteLine($"json:{json}");
                     var pokerVotes = JsonSerializer.Deserialize<List<PokerVote>>(json);
-                    Debug.WriteLine($"pokerVotes{pokerVotes}");
                     return pokerVotes?.FirstOrDefault(v => v.auth0Id == auth0Id);
                 }
             }

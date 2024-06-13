@@ -47,26 +47,4 @@ public static class DefaultDbData
 
     #endregion
     public static readonly List<Note> Notes = [Note1, Note2];
-    
-    #region PokerVotes
-
-    private static readonly PokerVote Vote1 = new()
-    {
-        Id = Guid.NewGuid(),
-        Username = "Matthijs Meijboom",
-        auth0Id = "google-oauth2|112201690251789498274",
-        Vote = "\u2615"
-    };
-
-    private static readonly PokerVote Vote2 = new()
-    {
-        Id = Guid.NewGuid(),
-        Username = "Developer",
-        auth0Id = "auth0|661834a129d6402ebd9baa0c",
-        Vote = "8"
-    };
-
-    #endregion
-    public static readonly List<PokerVote> PokerVotes = [Vote1, Vote2];
-    
 }

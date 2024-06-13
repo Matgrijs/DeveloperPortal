@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DeveloperPortalApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240531203553_InitialMigration")]
+    [Migration("20240613092106_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -53,7 +53,7 @@ namespace DeveloperPortalApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2453fe8c-5de2-42cf-a393-e25ab7561832"),
+                            Id = new Guid("e599efb5-b943-4f8f-893f-2d8bc6f82d61"),
                             Message = "Hey developer, leuk dat je er bent!",
                             MessageTime = new DateTimeOffset(new DateTime(2024, 4, 7, 16, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
                             Username = "Matthijs Meijboom",
@@ -61,7 +61,7 @@ namespace DeveloperPortalApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6540898b-c70c-4625-9a01-92d437be9002"),
+                            Id = new Guid("09806674-62db-428a-8aa2-669c18268b82"),
                             Message = "Hey developer!!",
                             MessageTime = new DateTimeOffset(new DateTime(2024, 4, 7, 16, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
                             Username = "Developer",
@@ -94,14 +94,14 @@ namespace DeveloperPortalApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("aca74b08-d1c1-4c48-a17e-77b0e03b0ece"),
+                            Id = new Guid("6bc63911-27d2-4bc4-94f2-22b4d45ffd8a"),
                             Content = "Applicatie afmaken!",
                             Username = "Developer",
                             auth0Id = "auth0|661834a129d6402ebd9baa0c"
                         },
                         new
                         {
-                            Id = new Guid("727ceb19-d2ab-47ce-9a28-9acde3475c43"),
+                            Id = new Guid("fc7b557f-1728-48c1-8da0-816d514d53df"),
                             Content = "Demo voorbereiden!",
                             Username = "Matthijs Meijboom",
                             auth0Id = "google-oauth2|112201690251789498274"
@@ -129,22 +129,6 @@ namespace DeveloperPortalApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PokerVotes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("6c6d7539-632f-4f1f-ad2e-d7e145c84ec5"),
-                            Username = "Matthijs Meijboom",
-                            Vote = "☕",
-                            auth0Id = "google-oauth2|112201690251789498274"
-                        },
-                        new
-                        {
-                            Id = new Guid("2d601ffb-69a4-4317-a1d7-33a0d2fd4908"),
-                            Username = "Developer",
-                            Vote = "8",
-                            auth0Id = "auth0|661834a129d6402ebd9baa0c"
-                        });
                 });
 #pragma warning restore 612, 618
         }

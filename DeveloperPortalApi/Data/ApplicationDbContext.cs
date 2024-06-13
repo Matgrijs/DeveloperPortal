@@ -15,10 +15,8 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        // Data seeding (make sure this does not interfere with adding new data)
         modelBuilder.Entity<ChatMessage>().HasData(DefaultDbData.ChatMessages);
         modelBuilder.Entity<Note>().HasData(DefaultDbData.Notes);
-        modelBuilder.Entity<PokerVote>().HasData(DefaultDbData.PokerVotes);
     }
 }
 
