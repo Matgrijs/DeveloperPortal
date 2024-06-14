@@ -1,12 +1,12 @@
-﻿using DeveloperPortal.Services;
-using DeveloperPortal.Services.DevHttpsConnectionHelper;
+﻿using DeveloperPortal.Services.DevHttpsConnectionHelper;
+using DeveloperPortal.Services.Interfaces;
 using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
 
 public partial class DevPlanningPoker
 {
-    public DevPlanningPoker(UserService userService, IDevHttpsConnectionHelper httpsHelper)
+    public DevPlanningPoker(IUserService userService, IDevHttpsConnectionHelper httpsHelper)
     {
         InitializeComponent();
         BindingContext = new DevPlanningPokerViewModel(userService, httpsHelper);

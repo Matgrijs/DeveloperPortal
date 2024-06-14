@@ -1,11 +1,11 @@
-﻿using DeveloperPortal.Services;
+﻿using DeveloperPortal.Services.Interfaces;
 using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
 
 public partial class SentryErrors
 {
-    public SentryErrors(SentryService sentryService, JiraService jiraService)
+    public SentryErrors(ISentryService sentryService, IJiraService jiraService)
     {
         SentryErrorViewModel viewModel;
         InitializeComponent();

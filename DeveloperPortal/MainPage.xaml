@@ -17,8 +17,9 @@
 
             <Label
                 Text="{OnPlatform 'Hello, Developer!', WinUI='Hello, Windows User', Android='Hello, Android User'}"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1">
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Center"
+                FontSize="32">
             </Label>
 
             <StackLayout>

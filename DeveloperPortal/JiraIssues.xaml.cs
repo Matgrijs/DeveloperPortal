@@ -1,11 +1,11 @@
-﻿using DeveloperPortal.Services;
+﻿using DeveloperPortal.Services.Interfaces;
 using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
 
 public partial class JiraIssues : ContentPage
 {
-    public JiraIssues(JiraService jiraService)
+    public JiraIssues(IJiraService jiraService)
     {
         InitializeComponent();
         BindingContext = new JiraIssueViewModel(jiraService);

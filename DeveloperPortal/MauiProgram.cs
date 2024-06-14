@@ -64,16 +64,23 @@ public static class MauiProgram
         builder.Services.AddTransient<DevProfileViewModel>();
         builder.Services.AddTransient<JiraIssueViewModel>();
         builder.Services.AddTransient<SentryErrorViewModel>();
+        builder.Services.AddTransient<MainPageViewModel>();
 
         // Register pages
         builder.Services.AddTransient<MainPage>();
         builder.Services.AddTransient<Dashboard>();
+        builder.Services.AddTransient<SentryErrors>();
+        builder.Services.AddTransient<JiraIssues>();
         builder.Services.AddTransient<DevChat>();
-        builder.Services.AddTransient<DevNotes>();
         builder.Services.AddTransient<DevPlanningPoker>();
+        builder.Services.AddTransient<DevNotes>();
+        builder.Services.AddTransient<DevProfile>();
+        
 
         // Register navigation service
         builder.Services.AddSingleton<INavigationService, NavigationService>();
+        
+        builder.Services.AddSingleton<IServiceProvider>(builder.Services.BuildServiceProvider());
 
 #if DEBUG
         builder.Logging.AddDebug();
