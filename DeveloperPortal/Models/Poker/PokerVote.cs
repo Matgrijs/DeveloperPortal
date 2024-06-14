@@ -8,7 +8,5 @@ public class PokerVote
 
     [JsonPropertyName("username")] public required string? Username { get; set; }
 
-    [JsonPropertyName("auth0Id")] public string? auth0Id { get; set; }
-
     [JsonPropertyName("vote")] public required string Vote { get; set; }
 }

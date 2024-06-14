@@ -7,7 +7,7 @@ using CommunityToolkit.Mvvm.Input;
 using DeveloperPortal.Models.Chats;
 using DeveloperPortal.Resources;
 using DeveloperPortal.Services;
-using DeveloperPortal.Services.DevHttpsConnectionHelper;
+using DeveloperPortal.Services.Interfaces;
 using Microsoft.AspNetCore.SignalR.Client;
 using Newtonsoft.Json;
 using Plugin.Maui.Audio;
@@ -17,7 +17,7 @@ namespace DeveloperPortal.ViewModels;
 public partial class DevChatViewModel : BaseViewModel
 {
     private readonly IAudioManager _audioManager;
-    private readonly IDevHttpsConnectionHelper _httpsHelper;
+    private readonly IHttpHandler _httpsHelper;
     private readonly ResourceManager _resourceManager = new(typeof(AppResources));
     private HubConnection? _hubConnection;
 
@@ -25,7 +25,7 @@ public partial class DevChatViewModel : BaseViewModel
 
     [ObservableProperty] private string _messageEntryText = null!;
 
-    public DevChatViewModel(IDevHttpsConnectionHelper httpsHelper)
+    public DevChatViewModel(IHttpHandler httpsHelper)
     {
         _audioManager = AudioManager.Current;
         _httpsHelper = httpsHelper;

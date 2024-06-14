@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DeveloperPortalApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240613092106_InitialMigration")]
+    [Migration("20240614183738_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -53,7 +53,7 @@ namespace DeveloperPortalApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e599efb5-b943-4f8f-893f-2d8bc6f82d61"),
+                            Id = new Guid("4acd9839-f289-47f4-8a3f-942edbb68d46"),
                             Message = "Hey developer, leuk dat je er bent!",
                             MessageTime = new DateTimeOffset(new DateTime(2024, 4, 7, 16, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
                             Username = "Matthijs Meijboom",
@@ -61,7 +61,7 @@ namespace DeveloperPortalApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("09806674-62db-428a-8aa2-669c18268b82"),
+                            Id = new Guid("053624f5-8e03-4058-825c-5f4b0472b18b"),
                             Message = "Hey developer!!",
                             MessageTime = new DateTimeOffset(new DateTime(2024, 4, 7, 16, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
                             Username = "Developer",
@@ -94,14 +94,14 @@ namespace DeveloperPortalApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6bc63911-27d2-4bc4-94f2-22b4d45ffd8a"),
+                            Id = new Guid("089cbe48-48b1-4a47-8f8d-54ad8af2d432"),
                             Content = "Applicatie afmaken!",
                             Username = "Developer",
                             auth0Id = "auth0|661834a129d6402ebd9baa0c"
                         },
                         new
                         {
-                            Id = new Guid("fc7b557f-1728-48c1-8da0-816d514d53df"),
+                            Id = new Guid("b2536b41-af56-47a0-a47a-143eb518f0b9"),
                             Content = "Demo voorbereiden!",
                             Username = "Matthijs Meijboom",
                             auth0Id = "google-oauth2|112201690251789498274"
@@ -119,10 +119,6 @@ namespace DeveloperPortalApi.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Vote")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("auth0Id")
                         .IsRequired()
                         .HasColumnType("text");
 

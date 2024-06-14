@@ -1,8 +1,9 @@
+using DeveloperPortal.Services.Interfaces;
 using System.Net.Security;
 
-namespace DeveloperPortal.Services.DevHttpsConnectionHelper;
+namespace DeveloperPortal.Services.Helpers;
 
-public class DevHttpsConnectionHelper : IDevHttpsConnectionHelper
+public class DevHttpsConnectionHelper : IHttpHandler
 {
     private readonly Lazy<HttpClient> _lazyHttpClient;
     public int SslPort { get; }
@@ -63,4 +64,28 @@ public class DevHttpsConnectionHelper : IDevHttpsConnectionHelper
         }
     }
 #endif
+    public Task<HttpResponseMessage> SendAsync(HttpRequestMessage request)
+    {
+        return HttpClient.SendAsync(request);
+    }
+
+    public Task<HttpResponseMessage> GetAsync(string requestUri)
+    {
+        return HttpClient.GetAsync(requestUri);
+    }
+
+    public Task<HttpResponseMessage> PostAsync(string requestUri, HttpContent content)
+    {
+        return HttpClient.PostAsync(requestUri, content);
+    }
+
+    public Task<HttpResponseMessage> PutAsync(string requestUri, HttpContent content)
+    {
+        return HttpClient.PutAsync(requestUri, content);
+    }
+
+    public Task<HttpResponseMessage> DeleteAsync(string requestUri)
+    {
+        return HttpClient.DeleteAsync(requestUri);
+    }
 }

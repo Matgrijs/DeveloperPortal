@@ -8,21 +8,21 @@ using CommunityToolkit.Mvvm.Input;
 using DeveloperPortal.Models.Notes;
 using DeveloperPortal.Resources;
 using DeveloperPortal.Services;
-using DeveloperPortal.Services.DevHttpsConnectionHelper;
+using DeveloperPortal.Services.Interfaces;
 using Newtonsoft.Json;
 
 namespace DeveloperPortal.ViewModels;
 
 public class DevNotesViewModel : ObservableObject
 {
-    private readonly IDevHttpsConnectionHelper _httpsHelper;
+    private readonly IHttpHandler _httpsHelper;
     private readonly ResourceManager _resourceManager = new(typeof(AppResources));
 
     private string _noteContent = null!;
 
     private Note? _selectedNote;
 
-    public DevNotesViewModel(IDevHttpsConnectionHelper httpsHelper)
+    public DevNotesViewModel(IHttpHandler httpsHelper)
     {
         _httpsHelper = httpsHelper;
         Notes = new ObservableCollection<Note>();
@@ -78,7 +78,7 @@ public class DevNotesViewModel : ObservableObject
         }
     }
 
-    private async Task CreateOrUpdateNoteAsync()
+    public async Task CreateOrUpdateNoteAsync()
     {
         if (SelectedNote != null)
             await OnEditNoteAsync(SelectedNote);

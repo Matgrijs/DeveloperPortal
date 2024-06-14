@@ -48,7 +48,6 @@ namespace DeveloperPortalApi.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Username = table.Column<string>(type: "text", nullable: false),
-                    auth0Id = table.Column<string>(type: "text", nullable: false),
                     Vote = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
@@ -61,8 +60,8 @@ namespace DeveloperPortalApi.Migrations
                 columns: new[] { "Id", "Message", "MessageTime", "Username", "auth0Id" },
                 values: new object[,]
                 {
-                    { new Guid("09806674-62db-428a-8aa2-669c18268b82"), "Hey developer!!", new DateTimeOffset(new DateTime(2024, 4, 7, 16, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)), "Developer", "auth0|661834a129d6402ebd9baa0c" },
-                    { new Guid("e599efb5-b943-4f8f-893f-2d8bc6f82d61"), "Hey developer, leuk dat je er bent!", new DateTimeOffset(new DateTime(2024, 4, 7, 16, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)), "Matthijs Meijboom", "google-oauth2|112201690251789498274" }
+                    { new Guid("053624f5-8e03-4058-825c-5f4b0472b18b"), "Hey developer!!", new DateTimeOffset(new DateTime(2024, 4, 7, 16, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)), "Developer", "auth0|661834a129d6402ebd9baa0c" },
+                    { new Guid("4acd9839-f289-47f4-8a3f-942edbb68d46"), "Hey developer, leuk dat je er bent!", new DateTimeOffset(new DateTime(2024, 4, 7, 16, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)), "Matthijs Meijboom", "google-oauth2|112201690251789498274" }
                 });
 
             migrationBuilder.InsertData(
@@ -70,8 +69,8 @@ namespace DeveloperPortalApi.Migrations
                 columns: new[] { "Id", "Content", "Username", "auth0Id" },
                 values: new object[,]
                 {
-                    { new Guid("6bc63911-27d2-4bc4-94f2-22b4d45ffd8a"), "Applicatie afmaken!", "Developer", "auth0|661834a129d6402ebd9baa0c" },
-                    { new Guid("fc7b557f-1728-48c1-8da0-816d514d53df"), "Demo voorbereiden!", "Matthijs Meijboom", "google-oauth2|112201690251789498274" }
+                    { new Guid("089cbe48-48b1-4a47-8f8d-54ad8af2d432"), "Applicatie afmaken!", "Developer", "auth0|661834a129d6402ebd9baa0c" },
+                    { new Guid("b2536b41-af56-47a0-a47a-143eb518f0b9"), "Demo voorbereiden!", "Matthijs Meijboom", "google-oauth2|112201690251789498274" }
                 });
         }
 

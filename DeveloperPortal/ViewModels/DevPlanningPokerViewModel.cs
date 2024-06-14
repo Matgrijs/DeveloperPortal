@@ -7,7 +7,6 @@ using CommunityToolkit.Mvvm.Input;
 using DeveloperPortal.Models.Poker;
 using DeveloperPortal.Models.Users;
 using DeveloperPortal.Services;
-using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using DeveloperPortal.Services.Interfaces;
 using Microsoft.AspNetCore.SignalR.Client;
 
@@ -15,13 +14,13 @@ namespace DeveloperPortal.ViewModels;
 
 public partial class DevPlanningPokerViewModel : BaseViewModel
 {
-    private readonly IDevHttpsConnectionHelper _httpsHelper;
+    private readonly IHttpHandler _httpsHelper;
     private readonly IUserService _userService;
     private HubConnection? _hubConnection;
 
     [ObservableProperty] private string? _selectedValue;
 
-    public DevPlanningPokerViewModel(IUserService userService, IDevHttpsConnectionHelper httpsHelper)
+    public DevPlanningPokerViewModel(IUserService userService, IHttpHandler httpsHelper)
     {
         _userService = userService;
         _httpsHelper = httpsHelper;
@@ -80,12 +79,11 @@ public partial class DevPlanningPokerViewModel : BaseViewModel
             Users.Clear();
             foreach (var user in users)
             {
-                var vote = await GetExistingVote(user.Auth0Id);
+                var vote = await GetExistingVote(user.Name);
                 if (vote != null)
                 {
                     user.Name = vote.Username;
                     user.Vote = vote.Vote;
-                    Debug.WriteLine(user.Vote);
                 }
 
                 Users.Add(user);
@@ -101,10 +99,10 @@ public partial class DevPlanningPokerViewModel : BaseViewModel
     {
         if (selectedValue != null)
         {
+            Debug.WriteLine($"{AuthenticationService.Instance.UserName} {AuthenticationService.Instance.Auth0Id}");
             var pokerVote = new PokerVote
             {
                 Username = AuthenticationService.Instance.UserName,
-                auth0Id = AuthenticationService.Instance.Auth0Id,
                 Vote = selectedValue
             };
 
@@ -116,7 +114,7 @@ public partial class DevPlanningPokerViewModel : BaseViewModel
     {
         try
         {
-            var existingVote = await GetExistingVote(pokerVote.auth0Id);
+            var existingVote = await GetExistingVote(pokerVote.Username);
 
             if (existingVote != null)
             {
@@ -134,8 +132,9 @@ public partial class DevPlanningPokerViewModel : BaseViewModel
         }
     }
 
-    public async Task<PokerVote?> GetExistingVote(string? auth0Id)
+    public async Task<PokerVote?> GetExistingVote(string? userName)
     {
+        Debug.WriteLine(userName);
         var httpClient = _httpsHelper.HttpClient;
         var response = await httpClient.GetAsync($"{_httpsHelper.DevServerRootUrl}/api/Poker");
         if (response.IsSuccessStatusCode)
@@ -144,7 +143,7 @@ public partial class DevPlanningPokerViewModel : BaseViewModel
             if (json.Length > 0)
             {
                 var pokerVotes = JsonSerializer.Deserialize<List<PokerVote>>(json);
-                return pokerVotes?.FirstOrDefault(v => v.auth0Id == auth0Id);
+                return pokerVotes?.FirstOrDefault(v => v.Username == userName);
             }
         }
 

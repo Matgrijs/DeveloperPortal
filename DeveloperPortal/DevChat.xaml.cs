@@ -1,4 +1,4 @@
-﻿using DeveloperPortal.Services.DevHttpsConnectionHelper;
+﻿using DeveloperPortal.Services.Interfaces;
 using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
@@ -7,7 +7,7 @@ public partial class DevChat
 {
     private readonly DevChatViewModel _viewModel;
 
-    public DevChat(IDevHttpsConnectionHelper httpsHelper)
+    public DevChat(IHttpHandler httpsHelper)
     {
         InitializeComponent();
 

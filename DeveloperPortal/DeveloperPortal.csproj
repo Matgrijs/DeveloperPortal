@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net8.0-android</TargetFrameworks>
+        <TargetFrameworks>net8.0;net8.0-android</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
-        <OutputType>Exe</OutputType>
+        <OutputType Condition="'$(TargetFramework)' != 'net8.0'">Exe</OutputType>
         <RootNamespace>DeveloperPortal</RootNamespace>
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
@@ -61,8 +61,8 @@
         <!-- Package References -->
         <PackageReference Include="Auth0.AuthenticationApi" Version="7.26.2"/>
         <PackageReference Include="Auth0.ManagementApi" Version="7.26.2"/>
-        <PackageReference Include="Auth0.OidcClient.MAUI" Version="1.0.0"/>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2"/>
+        <PackageReference Include="IdentityModel.OidcClient" Version="6.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.4"/>
         <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0-preview.4.24267.6"/>
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>

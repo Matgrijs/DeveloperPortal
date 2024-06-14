@@ -13,6 +13,11 @@
     <SourceRoot Include="C:\Users\mtmei\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(TargetFramework)' == 'net8.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.maui.resizetizer\8.0.6\buildTransitive\Microsoft.Maui.Resizetizer.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.resizetizer\8.0.6\buildTransitive\Microsoft.Maui.Resizetizer.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.maui.core\8.0.6\buildTransitive\Microsoft.Maui.Core.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.core\8.0.6\buildTransitive\Microsoft.Maui.Core.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.maui.controls.build.tasks\8.0.6\buildTransitive\netstandard2.0\Microsoft.Maui.Controls.Build.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.controls.build.tasks\8.0.6\buildTransitive\netstandard2.0\Microsoft.Maui.Controls.Build.Tasks.props')" />
+  </ImportGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net8.0-android' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.net.illink.tasks\8.0.2\build\Microsoft.NET.ILLink.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.illink.tasks\8.0.2\build\Microsoft.NET.ILLink.Tasks.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.maui.resizetizer\8.0.6\buildTransitive\Microsoft.Maui.Resizetizer.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.resizetizer\8.0.6\buildTransitive\Microsoft.Maui.Resizetizer.props')" />
@@ -26,6 +31,9 @@
     <Import Project="$(NuGetPackageRoot)microsoft.maui.core\8.0.6\buildTransitive\net6.0-windows10.0.17763.0\Microsoft.Maui.Core.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.core\8.0.6\buildTransitive\net6.0-windows10.0.17763.0\Microsoft.Maui.Core.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.maui.controls.build.tasks\8.0.6\buildTransitive\net6.0-windows10.0.17763.0\Microsoft.Maui.Controls.Build.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.controls.build.tasks\8.0.6\buildTransitive\net6.0-windows10.0.17763.0\Microsoft.Maui.Controls.Build.Tasks.props')" />
   </ImportGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgSentry Condition=" '$(PkgSentry)' == '' ">C:\Users\mtmei\.nuget\packages\sentry\4.7.0</PkgSentry>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0-android' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgSentry Condition=" '$(PkgSentry)' == '' ">C:\Users\mtmei\.nuget\packages\sentry\4.7.0</PkgSentry>
     <PkgMicrosoft_NET_ILLink_Tasks Condition=" '$(PkgMicrosoft_NET_ILLink_Tasks)' == '' ">C:\Users\mtmei\.nuget\packages\microsoft.net.illink.tasks\8.0.2</PkgMicrosoft_NET_ILLink_Tasks>

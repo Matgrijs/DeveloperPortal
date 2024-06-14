@@ -25,6 +25,7 @@ public partial class DashboardViewModel : ObservableRecipient
     public DashboardViewModel(INavigationService navigationService)
     {
         _navigationService = navigationService;
+
         NavigateCommand = new RelayCommand<string>(OnNavigate);
         IsActive = true;
         UpdateLabels();
@@ -36,7 +37,7 @@ public partial class DashboardViewModel : ObservableRecipient
 
     public ICommand NavigateCommand { get; }
 
-    private void UpdateLabels()
+    public void UpdateLabels()
     {
         ProfileLabel = _resourceManager.GetString("ProfileTitle", CultureInfo.CurrentCulture);
         ChatLabel = _resourceManager.GetString("ChatTitle", CultureInfo.CurrentCulture);
@@ -45,7 +46,9 @@ public partial class DashboardViewModel : ObservableRecipient
 
     public async void OnNavigate(string? destination)
     {
-        Debug.WriteLine($"destination: {destination}");
-        if (destination != null) await _navigationService.NavigateToAsync(destination);
+        if (!string.IsNullOrEmpty(destination))
+        {
+            await _navigationService.NavigateToAsync(destination);
+        }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Globalization;
 using DeveloperPortal.Authentication;
 using DeveloperPortal.Services;
-using DeveloperPortal.Services.DevHttpsConnectionHelper;
 using DeveloperPortal.Services.Helpers;
 using DeveloperPortal.Services.Interfaces;
 using DeveloperPortal.ViewModels;
@@ -53,7 +52,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<IAuth0ManagementService, Auth0ManagementService>();
         builder.Services.AddSingleton<IUserService, UserService>();
         builder.Services.AddSingleton<ISentryService, SentryService>();
-        builder.Services.AddSingleton<IDevHttpsConnectionHelper, DevHttpsConnectionHelper>(_ =>
+        builder.Services.AddSingleton<IHttpHandler, DevHttpsConnectionHelper>(_ =>
             new DevHttpsConnectionHelper(7059));
 
         // Register view models

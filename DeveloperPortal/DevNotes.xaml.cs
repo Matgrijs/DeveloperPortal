@@ -1,11 +1,11 @@
-﻿using DeveloperPortal.Services.DevHttpsConnectionHelper;
+﻿using DeveloperPortal.Services.Interfaces;
 using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
 
 public partial class DevNotes
 {
-    public DevNotes(IDevHttpsConnectionHelper httpsHelper)
+    public DevNotes(IHttpHandler httpsHelper)
     {
         InitializeComponent();
         BindingContext = new DevNotesViewModel(httpsHelper);
