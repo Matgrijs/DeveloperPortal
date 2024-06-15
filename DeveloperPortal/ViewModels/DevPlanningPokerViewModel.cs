@@ -107,7 +107,7 @@ public partial class DevPlanningPokerViewModel : BaseViewModel
         }
     }
 
-    private async Task AddOrUpdateVoteAsync(PokerVote pokerVote)
+    public async Task AddOrUpdateVoteAsync(PokerVote pokerVote)
     {
         try
         {
