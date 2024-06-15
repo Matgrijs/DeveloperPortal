@@ -1,83 +1,68 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DeveloperPortal.Dashboard">
+             xmlns:viewmodel="clr-namespace:DeveloperPortal.ViewModels"
+             x:Class="DeveloperPortal.Dashboard"
+             x:DataType="viewmodel:DashboardViewModel"
+             Title="Dashboard">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Label
-                Text="Dashboard"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-            <Grid RowSpacing="10" ColumnSpacing="10" WidthRequest="520">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                
-                <Button 
-                    Text="Planning poker"
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="PlanningPokerButton" />
-                <Button
-                    Text="Notes"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="NotesButton" />
-                <Button
-                    Text="Sentry Errors"
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="ErrorButton" />
-                <Button
-                    Text="Jira Issues"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="BugButton" />
-                <Button
-                    Text="Chat"
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="ChatButton" />
-                <Button
-                    Text="Profile"
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    BackgroundColor="#c6002a"
-                    Clicked="OnNavigateClicked"
-                    x:Name="ProfileButton" />
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Grid RowSpacing="10" ColumnSpacing="10" VerticalOptions="Center"
+                  WidthRequest="{OnIdiom Phone=270, Tablet=520, Desktop=770}"
+                  RowDefinitions="{OnIdiom Phone='Auto, Auto, Auto, Auto, Auto, Auto', Tablet='*, *', Desktop='*, *'}"
+                  ColumnDefinitions="{OnIdiom Phone='Auto', Tablet='*, *', Desktop='*, *, *'}">
+
+                <Button Text="Sentry Errors"
+                        Grid.Row="{OnIdiom Phone=0, Tablet=0, Desktop=0}"
+                        Grid.Column="{OnIdiom Phone=0, Tablet=0, Desktop=0}"
+                        HeightRequest="250"
+                        WidthRequest="250"
+                        BackgroundColor="#c6002a"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Sentry Errors" />
+                <Button Text="Jira Issues"
+                        Grid.Row="{OnIdiom Phone=1, Tablet=0, Desktop=0}"
+                        Grid.Column="{OnIdiom Phone=0, Tablet=1, Desktop=1}"
+                        HeightRequest="250"
+                        WidthRequest="250"
+                        BackgroundColor="#c6002a"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Jira Issues" />
+                <Button Text="{Binding ChatLabel}"
+                        Grid.Row="{OnIdiom Phone=2, Tablet=1, Desktop=0}"
+                        Grid.Column="{OnIdiom Phone=0, Tablet=0, Desktop=2}"
+                        HeightRequest="250"
+                        WidthRequest="250"
+                        BackgroundColor="#c6002a"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Chat" />
+                <Button Text="Planning poker"
+                        Grid.Row="{OnIdiom Phone=3, Tablet=1, Desktop=1}"
+                        Grid.Column="{OnIdiom Phone=0, Tablet=1, Desktop=0}"
+                        HeightRequest="250"
+                        WidthRequest="250"
+                        BackgroundColor="#c6002a"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Planning poker" />
+                <Button Text="{Binding NotesLabel}"
+                        Grid.Row="{OnIdiom Phone=4, Tablet=2, Desktop=1}"
+                        Grid.Column="{OnIdiom Phone=0, Tablet=0, Desktop=1}"
+                        HeightRequest="250"
+                        WidthRequest="250"
+                        BackgroundColor="#c6002a"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Notes" />
+                <Button Text="{Binding ProfileLabel}"
+                        Grid.Row="{OnIdiom Phone=5, Tablet=2, Desktop=1}"
+                        Grid.Column="{OnIdiom Phone=0, Tablet=1, Desktop=2}"
+                        HeightRequest="250"
+                        WidthRequest="250"
+                        BackgroundColor="#c6002a"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Profile" />
             </Grid>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

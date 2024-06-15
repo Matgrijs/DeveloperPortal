@@ -20,9 +20,7 @@ public class NoteController(ApplicationDbContext context, NoteService noteServic
     public async Task<IActionResult> PostNote(Note note)
     {
         if (string.IsNullOrEmpty(note.Username) || string.IsNullOrEmpty(note.Content))
-        {
             return BadRequest("Username and content are required.");
-        }
         await noteService.AddNote(note);
         return Ok();
     }
@@ -30,16 +28,11 @@ public class NoteController(ApplicationDbContext context, NoteService noteServic
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateNote(Guid id, Note note)
     {
-        if (id != note.Id)
-        {
-            return BadRequest("Note ID mismatch");
-        }
+        if (id != note.Id) return BadRequest("Note ID mismatch");
 
-        var existingNote = await context.Notes.FindAsync(id);
-        if (existingNote == null)
-        {
-            return NotFound();
-        }
+        var existingNote = await context.Notes.AsNoTracking().FirstOrDefaultAsync(n => n.Id == id);
+        if (existingNote == null) return NotFound();
+
 
         await noteService.UpdateNote(note);
         return NoContent();
@@ -49,10 +42,7 @@ public class NoteController(ApplicationDbContext context, NoteService noteServic
     public async Task<IActionResult> DeleteNote(Guid id)
     {
         var note = await context.Notes.FindAsync(id);
-        if (note == null)
-        {
-            return NotFound();
-        }
+        if (note == null) return NotFound();
 
         await noteService.DeleteNote(id);
         return NoContent();

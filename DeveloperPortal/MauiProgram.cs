@@ -1,6 +1,11 @@
-﻿using Microsoft.Extensions.Logging;
-using Auth0.OidcClient;
+﻿using System.Globalization;
+using DeveloperPortal.Authentication;
 using DeveloperPortal.Services;
+using DeveloperPortal.Services.Helpers;
+using DeveloperPortal.Services.Interfaces;
+using DeveloperPortal.ViewModels;
+using IdentityModel.OidcClient;
+using Microsoft.Extensions.Logging;
 
 namespace DeveloperPortal;
 
@@ -9,69 +14,79 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
+
+        // Set default culture before configuration starts
+        CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
+        CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US");
+
         builder
             .UseMauiApp<App>()
-            .UseSentry(options => {
-                // The DSN is the only required setting.
-                options.Dsn = "https://7a8a2035ca3fc5642fc8bda4a76c866e@o4507341086064640.ingest.de.sentry.io/4507341088555088";
-
-                // Use debug mode if you want to see what the SDK is doing.
-                // Debug messages are written to stdout with Console.Writeline,
-                // and are viewable in your IDE's debug console or with 'adb logcat', etc.
-                // This option is not recommended when deploying your application.
+            .UseSentry(options =>
+            {
+                options.Dsn =
+                    "https://7a8a2035ca3fc5642fc8bda4a76c866e@o4507341086064640.ingest.de.sentry.io/4507341088555088";
                 options.Debug = true;
-
-                // Set TracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
-                // We recommend adjusting this value in production.
                 options.TracesSampleRate = 1.0;
-                // Other Sentry options can be set here.
             })
-
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
-        
-        builder.Services.AddSingleton<SentryService>(serviceProvider =>
-        {
-            var sentryApiToken = "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";
-            var organization = "developerportalavans";
-            var project = "dotnet-maui";
-            return new SentryService(sentryApiToken, organization, project);
-        });
 
-        builder.Services.AddSingleton<JiraService>(serviceProvider => new JiraService());
-        
-        var auth0Client = new Auth0Client(new()
+        // Register Auth0Client
+        var oidcClient = new OidcClient(new()
         {
-            Domain = "developerportal.eu.auth0.com",
-            ClientId = "dlRxoxG6hpTmFR6tGnNlhh8EX9bUd96d",
-            RedirectUri = "myapp://callback/",
-            PostLogoutRedirectUri = "myapp://callback/",
-            Scope = "openid profile email"
+            Authority = $"https://{AuthenticationConstants.Auth0Domain}",
+            ClientId = AuthenticationConstants.ClientId,
+            RedirectUri = $"{AuthenticationConstants.AppProtocolName}://{AuthenticationConstants.AppCallbackUrl}/",
+            PostLogoutRedirectUri = $"{AuthenticationConstants.AppProtocolName}://{AuthenticationConstants.AppCallbackUrl}/",
+            Scope = string.Join(" ", AuthenticationConstants.Scopes),
+            Browser = new AuthWorkaroundBrowser(),
         });
+        ServiceLocator.AuthClient = oidcClient;
+        builder.Services.AddSingleton(oidcClient);
+
+        // Register services
+        builder.Services.AddSingleton<IJiraService, JiraService>();
+        builder.Services.AddSingleton<IAuth0ManagementService, Auth0ManagementService>();
+        builder.Services.AddSingleton<IUserService, UserService>();
+        builder.Services.AddSingleton<ISentryService, SentryService>();
+        builder.Services.AddSingleton<IHttpHandler, DevHttpsConnectionHelper>(_ =>
+            new DevHttpsConnectionHelper(7059));
+
+        // Register view models
+        builder.Services.AddTransient<DashboardViewModel>();
+        builder.Services.AddTransient<DevChatViewModel>();
+        builder.Services.AddTransient<DevNotesViewModel>();
+        builder.Services.AddTransient<DevPlanningPokerViewModel>();
+        builder.Services.AddTransient<DevProfileViewModel>();
+        builder.Services.AddTransient<JiraIssueViewModel>();
+        builder.Services.AddTransient<SentryErrorViewModel>();
+        builder.Services.AddTransient<MainPageViewModel>();
+
+        // Register pages
+        builder.Services.AddTransient<MainPage>();
+        builder.Services.AddTransient<Dashboard>();
+        builder.Services.AddTransient<SentryErrors>();
+        builder.Services.AddTransient<JiraIssues>();
+        builder.Services.AddTransient<DevChat>();
+        builder.Services.AddTransient<DevPlanningPoker>();
+        builder.Services.AddTransient<DevNotes>();
+        builder.Services.AddTransient<DevProfile>();
         
-        builder.Services.AddSingleton(auth0Client);
-        builder.Services.AddSingleton<Auth0ManagementService>();
-        builder.Services.AddSingleton<NavigationService>();
-        builder.Services.AddSingleton<ApiService>();
-        builder.Services.AddSingleton<UserService>();
-        builder.Services.AddSingleton<MainPage>();
-        builder.Services.AddSingleton<Dashboard>();
-        builder.Services.AddSingleton<DevChat>();
-        builder.Services.AddSingleton<DevNotes>();
-        builder.Services.AddSingleton<DevPlanningPoker>();
+
+        // Register navigation service
+        builder.Services.AddSingleton<INavigationService, NavigationService>();
         
+        builder.Services.AddSingleton<IServiceProvider>(builder.Services.BuildServiceProvider());
+
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
-        
+
         var app = builder.Build();
         
-        // Set the service provider for use in App.xaml.cs
-        App.Services = app.Services;
-
         return app;
     }
 }

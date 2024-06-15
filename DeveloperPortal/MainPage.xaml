@@ -1,7 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DeveloperPortal.MainPage">
+             xmlns:viewmodel="clr-namespace:DeveloperPortal.ViewModels"
+             x:Class="DeveloperPortal.MainPage"
+             x:DataType="viewmodel:MainPageViewModel">
 
     <ScrollView>
         <VerticalStackLayout
@@ -14,17 +16,18 @@
                 SemanticProperties.Description="Avans logo" />
 
             <Label
-                Text="Hello, Developer!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                Text="{OnPlatform 'Hello, Developer!', WinUI='Hello, Windows User', Android='Hello, Android User'}"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Center"
+                FontSize="32">
+            </Label>
 
             <StackLayout>
-                <Button 
-                    x:Name="LoginBtn"
+                <Button
                     Text="Log In"
                     SemanticProperties.Hint="Click to login"
                     BackgroundColor="#c6002a"
-                    Clicked="OnLoginClicked"
+                    Command="{Binding LoginCommand}"
                     HorizontalOptions="Center" />
             </StackLayout>
         </VerticalStackLayout>

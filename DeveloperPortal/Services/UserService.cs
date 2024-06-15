@@ -1,57 +1,39 @@
-﻿using Auth0.AuthenticationApi;
-using Auth0.ManagementApi;
+﻿using Auth0.ManagementApi;
 using Auth0.ManagementApi.Models;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using DeveloperPortal.Services.Interfaces;
+using User = DeveloperPortal.Models.Users.User;
 
-namespace DeveloperPortal.Services
+namespace DeveloperPortal.Services;
+
+public class UserService: IUserService
 {
-    public class UserService
+    private readonly IAuth0ManagementService _auth0ManagementServiceService;
+    private readonly string _domain = "developerportal.eu.auth0.com";
+
+    public UserService(IAuth0ManagementService auth0ManagementServiceService)
     {
-        private readonly Auth0ManagementService _auth0ManagementServiceService;
-        private readonly ILogger<UserService> _logger;
-        private readonly string _domain = "developerportal.eu.auth0.com";
+        _auth0ManagementServiceService = auth0ManagementServiceService;
+    }
 
-        public UserService(Auth0ManagementService auth0ManagementServiceService, ILogger<UserService> logger)
+    public async Task<IList<User>> GetUsersAsync()
+    {
+        try
         {
-            _auth0ManagementServiceService = auth0ManagementServiceService;
-            _logger = logger;
-        }
+            var token = await _auth0ManagementServiceService.GetManagementApiToken();
+            if (string.IsNullOrEmpty(token)) throw new Exception("Access token is missing.");
 
-        public async Task<IList<CustomUser>> GetUsersAsync()
-        {
-            try
+            var managementApiClient = new ManagementApiClient(token, new Uri($"https://{_domain}/api/v2/"));
+            var users = await managementApiClient.Users.GetAllAsync(new GetUsersRequest());
+            return users.Select(u => new User
             {
-                var token = await _auth0ManagementServiceService.GetManagementApiToken();
-                if (string.IsNullOrEmpty(token))
-                {
-                    throw new Exception("Access token is missing.");
-                }
-
-                var managementApiClient = new ManagementApiClient(token, new Uri($"https://{_domain}/api/v2/"));
-                var users = await managementApiClient.Users.GetAllAsync(new GetUsersRequest());
-                return users.Select(u => new CustomUser
-                {
-                    Name = u.FullName,
-                }).ToList();
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureException(ex);
-                throw;
-            }
+                Name = u.FullName,
+                Auth0Id = u.UserId
+            }).ToList();
         }
-
-        public class CustomUser
+        catch (Exception ex)
         {
-            public string Name { get; set; }
-            public string SelectedValue { get; set; }
+            SentrySdk.CaptureException(ex);
+            throw;
         }
-
     }
 }
-
-

@@ -1,29 +1,17 @@
-﻿using DeveloperPortal.Services;
+﻿using DeveloperPortal.ViewModels;
 
 namespace DeveloperPortal;
 
-public partial class DevProfile
+public partial class DevProfile : ContentPage
 {
-    private readonly NavigationService _navigationService;
-    public DevProfile(NavigationService navigationService)
+    public DevProfile()
     {
         InitializeComponent();
-        
-        _navigationService = navigationService;
+        BindingContext = new DevProfileViewModel();
     }
 
-    private void OnAvansThemeClicked(object sender, EventArgs e)
+    private void Switch_Toggled(object sender, ToggledEventArgs e)
     {
-        // TODO implement
-    }
-    
-    private void OnRoundedThemeClicked(object sender, EventArgs e)
-    {
-        // TODO implement
-    }
-    
-    private async void OnBackButtonClicked(object sender, EventArgs e)
-    {
-        await _navigationService.OnBackButtonClickedAsync();
+        if (BindingContext is DevProfileViewModel vm) vm.ToggleLanguageCommand.Execute(null);
     }
 }

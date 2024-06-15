@@ -2,8 +2,8 @@
 
 public class CreateChatDto
 {
-    public string Username { get; set; }
-    public string Auth0Id { get; set; }
-    public string Message { get; set; }
+    public required string? Username { get; set; }
+    public required string? Auth0Id { get; set; }
+    public required string Message { get; set; }
     public DateTimeOffset MessageTime { get; set; }
 }
