@@ -16,7 +16,6 @@ namespace DeveloperPortal.Services
 
         public async Task NavigateToAsync(string destination)
         {
-            Debug.WriteLine($"destination 2: {destination}");
             Page? page = destination switch
             {
                 "Planning poker" => _serviceProvider.GetService<DevPlanningPoker>(),
@@ -28,16 +27,7 @@ namespace DeveloperPortal.Services
                 "Dashboard" => _serviceProvider.GetService<Dashboard>(),
                 _ => null
             };
-
-            if (page == null)
-            {
-                Debug.WriteLine($"Failed to navigate to: {destination}. The page instance is null.");
-            }
-            else
-            {
-                Debug.WriteLine($"Navigating to: {destination}");
-                await Application.Current.MainPage.Navigation.PushAsync(page);
-            }
+            await Application.Current.MainPage.Navigation.PushAsync(page);
         }
     }
 }

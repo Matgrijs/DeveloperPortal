@@ -55,8 +55,6 @@ public partial class DevPlanningPokerViewModel : BaseViewModel
 
             _hubConnection.On<PokerVote>("ReceiveVote", _ =>
             {
-                Debug.WriteLine("triggered");
-
                 async void Action()
                 {
                     await LoadUsersAsync();
@@ -99,7 +97,6 @@ public partial class DevPlanningPokerViewModel : BaseViewModel
     {
         if (selectedValue != null)
         {
-            Debug.WriteLine($"{AuthenticationService.Instance.UserName} {AuthenticationService.Instance.Auth0Id}");
             var pokerVote = new PokerVote
             {
                 Username = AuthenticationService.Instance.UserName,
@@ -134,7 +131,6 @@ public partial class DevPlanningPokerViewModel : BaseViewModel
 
     public async Task<PokerVote?> GetExistingVote(string? userName)
     {
-        Debug.WriteLine(userName);
         var httpClient = _httpsHelper.HttpClient;
         var response = await httpClient.GetAsync($"{_httpsHelper.DevServerRootUrl}/api/Poker");
         if (response.IsSuccessStatusCode)

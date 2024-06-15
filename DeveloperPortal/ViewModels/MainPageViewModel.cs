@@ -28,7 +28,6 @@ namespace DeveloperPortal.ViewModels
         // LoginCommand executes this function when a login attempt is made
         private async Task OnLoginClickedAsync()
         {
-            Debug.WriteLine("aan het inloggen");
             try
             {
                 // Attempt to log in and fetch user data and tokens
